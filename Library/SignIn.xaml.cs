@@ -82,7 +82,6 @@ namespace Library
                           caption: "Successful Login",
                           button: MessageBoxButton.OK,
                           icon: MessageBoxImage.Information);
-                        new LibrarianDashboard().Show();
                         new MemberDashboard().Show();
                         Close();
 
