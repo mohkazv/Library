@@ -1,0 +1,33 @@
+﻿<Window x:Class="Library.AddNewBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="AddNewBook" Height="240" Width="700">
+    <Grid Margin="0,0,-3.667,-13.373">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Book Name :" HorizontalAlignment="Left" Margin="25,8,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="75"/>
+        <TextBox x:Name="BookNameTxtBx" HorizontalAlignment="Left" Margin="107,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
+        <Label Content="Category :" HorizontalAlignment="Left" Margin="258,8,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="64"/>
+        <TextBox x:Name="CategoryTxtBx" HorizontalAlignment="Left" Margin="325,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
+        <Label Content="Available :" HorizontalAlignment="Left" Margin="471,8,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="64"/>
+        <TextBox x:Name="AvailableTxtBx" HorizontalAlignment="Left" Margin="538,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
+        <Label Content="Publish Year :" HorizontalAlignment="Left" Margin="24,36,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="81"/>
+        <TextBox x:Name="PublishYearTxtBx" HorizontalAlignment="Left" Margin="107,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
+        <Label Content="Book Id (ISBN) :" HorizontalAlignment="Left" Margin="130,80,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="105"/>
+        <TextBox x:Name="BookIdTxtBx" HorizontalAlignment="Left" Margin="235,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
+        <Label Content="Author :" HorizontalAlignment="Left" Margin="480,36,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" RenderTransformOrigin="0.52,1.396" Height="25" Width="54"/>
+        <TextBox x:Name="AuthorTxtBx" HorizontalAlignment="Left" Margin="539,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
+        <Label Content="Edition :" HorizontalAlignment="Left" Margin="270,36,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" RenderTransformOrigin="0.52,1.396" Height="25" Width="53"/>
+        <TextBox x:Name="EditionTxtBx" HorizontalAlignment="Left" Margin="328,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
+        <Separator HorizontalAlignment="Center" Margin="0,122,0,0" VerticalAlignment="Top" Height="16" Width="535"/>
+        <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" Margin="260,150,0,0" VerticalAlignment="Top" Width="65" FontFamily="Ink Free" FontWeight="Bold" Click="SaveBtn_Click"/>
+        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="363,150,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.509,0.545" FontFamily="Ink Free" FontWeight="Bold" Click="BackBtn_Click"/>
+
+    </Grid>
+</Window>

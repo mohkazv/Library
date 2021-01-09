@@ -1,0 +1,16 @@
+﻿<Window x:Class="Library.LibrarianMemberDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="LibrarianMemberDashboard" Height="270" Width="450">
+    <Grid Margin="0,0,-6.667,-12.373">
+        <Button x:Name="AddNewMemberBtn" Content="Add &#xA;New&#xA; Member&#xA;" Margin="69,43,257,127" FontFamily="Ink Free" FontWeight="Bold" Click="AddNewMemberBtn_Click"/>
+        <Separator HorizontalAlignment="Left" Margin="34,134,0,0" VerticalAlignment="Top" Height="52" Width="366" FontFamily="Ink Free" FontWeight="Bold"/>
+        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="182,179,0,0" VerticalAlignment="Top" Width="63" FontFamily="Ink Free" FontWeight="Bold" Click="BackBtn_Click"/>
+        <Button x:Name="EditMembershipInformationBtn" Content="Edit&#xA;Membership&#xA;Information&#xA;" Margin="236,44,90,126" FontFamily="Ink Free" FontWeight="Bold" Click="EditMembershipInformationBtn_Click"/>
+
+    </Grid>
+</Window>
