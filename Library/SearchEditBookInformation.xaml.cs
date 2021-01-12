@@ -19,6 +19,8 @@ namespace Library
     /// </summary>
     public partial class SearchEditBookInformation : Window
     {
+        public static int SetValueForBookId = 0;
+
         public SearchEditBookInformation()
         {
             InitializeComponent();
@@ -26,7 +28,9 @@ namespace Library
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            SetValueForBookId = int.Parse(BookIdTxtBx.Text);
+            new EditBookInformation().Show();
+            Close();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

@@ -42,7 +42,7 @@ namespace Library
                 cmd.Parameters.Add("@PublishedYear", PublishYearTxtBx.Text);
                 cmd.Parameters.Add("@Edition", EditionTxtBx.Text);
                 cmd.Parameters.Add("@AuthorName", AuthorTxtBx.Text);
-                cmd.Parameters.Add("@ISBN", BookIdTxtBx.Text);
+                cmd.Parameters.Add("@ISBN", ISBNTxtBx.Text);
                 cmd.Parameters.Add("@Language", LanguageTxtBx.Text);
                 cmd.Parameters.Add("@RegisterDate", DateTime.Now);
                 cmd.ExecuteNonQuery();

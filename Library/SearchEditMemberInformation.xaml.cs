@@ -19,6 +19,7 @@ namespace Library
     /// </summary>
     public partial class SearchEditMemberInformation : Window
     {
+        public static int SetValueForUserId = 0;
         public SearchEditMemberInformation()
         {
             InitializeComponent();
@@ -26,7 +27,9 @@ namespace Library
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            SetValueForUserId = int.Parse(UserIdTxtBx.Text);
+            new EditMemberInformation().Show();
+            Close();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

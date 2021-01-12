@@ -20,7 +20,7 @@
         <Label Content="Publish Year :" HorizontalAlignment="Left" Margin="24,36,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="81"/>
         <TextBox x:Name="PublishYearTxtBx" HorizontalAlignment="Left" Margin="107,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
         <Label Content="ISBN :" HorizontalAlignment="Left" Margin="57,60,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="105"/>
-        <TextBox x:Name="BookIdTxtBx" HorizontalAlignment="Left" Margin="106,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="355" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
+        <TextBox x:Name="ISBNTxtBx" HorizontalAlignment="Left" Margin="106,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="355" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
         <Label Content="Author :" HorizontalAlignment="Left" Margin="480,36,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" RenderTransformOrigin="0.52,1.396" Height="25" Width="54"/>
         <TextBox x:Name="AuthorTxtBx" HorizontalAlignment="Left" Margin="539,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
         <Label Content="Edition :" HorizontalAlignment="Left" Margin="270,36,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" RenderTransformOrigin="0.52,1.396" Height="25" Width="53"/>
