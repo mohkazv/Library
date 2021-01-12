@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\mohka\source\repos\Library\Library\App.xaml
-14-2020030627
+16132664016
 
-20-1425466203
+211615331630
 13-1505183044
-AddNewBook.xaml;AddNewMember.xaml;BookDashboard.xaml;BorrowBook.xaml;EditBookInformation.xaml;EditMemberInformation.xaml;LibrarianAccountDashboard.xaml;LibrarianDashboard.xaml;LibrarianMemberDashboard.xaml;MainWindow.xaml;SearchEditBookInformation.xaml;SearchEditMemberInformation.xaml;SignIn.xaml;SignUp.xaml;
+AddNewBook.xaml;AddNewMember.xaml;BookDashboard.xaml;BorrowBook.xaml;EditBookInformation.xaml;EditMemberInformation.xaml;LibrarianAccountDashboard.xaml;LibrarianDashboard.xaml;LibrarianLoginPage.xaml;LibrarianMemberDashboard.xaml;MainWindow.xaml;MemberLoginPage.xaml;SearchEditBookInformation.xaml;SearchEditMemberInformation.xaml;SignIn.xaml;SignUp.xaml;
 
-False
+True
 

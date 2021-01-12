@@ -79,13 +79,14 @@
     <Compile Include="LibrarianDashboard.xaml.cs">
       <DependentUpon>LibrarianDashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LibrarianLoginPage.xaml.cs">
+      <DependentUpon>LibrarianLoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LibrarianMemberDashboard.xaml.cs">
       <DependentUpon>LibrarianMemberDashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Library_DBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Library_DBDataSet.xsd</DependentUpon>
+    <Compile Include="MemberLoginPage.xaml.cs">
+      <DependentUpon>MemberLoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchEditBookInformation.xaml.cs">
       <DependentUpon>SearchEditBookInformation.xaml</DependentUpon>
@@ -131,6 +132,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LibrarianLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LibrarianMemberDashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,6 +152,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MemberLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SearchEditBookInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,17 +191,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Library_DBDataSet.xsc">
-      <DependentUpon>Library_DBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Library_DBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Library_DBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Library_DBDataSet.xss">
-      <DependentUpon>Library_DBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

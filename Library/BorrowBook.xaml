@@ -9,8 +9,8 @@
     <Grid Margin="0,0,-1.667,-0.373">
         <Label Content="Book Name :" HorizontalAlignment="Left" Margin="25,8,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="75"/>
         <TextBox x:Name="BookNameTxtBx" HorizontalAlignment="Left" Margin="107,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
-        <Label Content="Book Id (ISBN) :" HorizontalAlignment="Left" Margin="247,8,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="105"/>
-        <TextBox x:Name="BookIdTxtBx" HorizontalAlignment="Left" Margin="352,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
+        <Label Content="ISBN :" HorizontalAlignment="Left" Margin="247,8,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="105"/>
+        <TextBox x:Name="BookIdTxtBx" HorizontalAlignment="Left" Margin="304,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
         <Label Content="User Id :" HorizontalAlignment="Left" Margin="98,43,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="75"/>
         <TextBox x:Name="UserIdTxtBx" HorizontalAlignment="Left" Margin="163,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>
         <Separator HorizontalAlignment="Left" Margin="81,99,0,0" VerticalAlignment="Top" Height="46" Width="447"/>
@@ -19,7 +19,7 @@
         <Label Content="Return Date :" HorizontalAlignment="Left" Margin="14,75,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="88"/>
         <Label Content="Deadline Date :" HorizontalAlignment="Left" Margin="267,7,0,0" VerticalAlignment="Center" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="93"/>
         <DatePicker x:Name="ReturnDateDP" HorizontalAlignment="Left" Margin="108,77,0,0" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold"/>
-        <DatePicker x:Name="DeadLIneDateDp" HorizontalAlignment="Left" Margin="373,78,0,0" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold"/>
+        <DatePicker x:Name="DeadlineDateDp" HorizontalAlignment="Left" Margin="373,78,0,0" VerticalAlignment="Top" Width="133" FontFamily="Ink Free" FontWeight="Bold"/>
 
     </Grid>
 </Window>

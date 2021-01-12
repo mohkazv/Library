@@ -10,27 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Library
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LibrarianLoginPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LibrarianLoginPage : Window
     {
-        public MainWindow()
+        public LibrarianLoginPage()
         {
             InitializeComponent();
         }
 
-        private void LibrarianBtn_Click(object sender, RoutedEventArgs e)
+        private void SigninButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void MemberBtn_Click(object sender, RoutedEventArgs e)
+        private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

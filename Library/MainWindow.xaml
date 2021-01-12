@@ -6,10 +6,9 @@
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="550">
-    <Grid Margin="0,0,-4.667,-13.373">
+    <Grid Margin="0,0,-4.667,0.667">
         <Label Content="Welcome ! &#xA;to Library Management System ." HorizontalAlignment="Left" Margin="32,69,0,0" VerticalAlignment="Top" Width="485" Height="80" FontFamily="Ink Free" FontSize="22" FontWeight="Bold"/>
-        <Button x:Name="SignUpbtn" Content="Sign Up" HorizontalAlignment="Left" Margin="174,290,0,0" VerticalAlignment="Top" Width="170" FontFamily="Ink Free" FontSize="14" RenderTransformOrigin="0.431,-1.218" Height="50" Click="SignUpButton_Click" FontWeight="Bold"/>
-        <Separator HorizontalAlignment="Left" Margin="81,143,0,0" VerticalAlignment="Top" Height="86" RenderTransformOrigin="0.5,0.5" Width="389">
+        <Separator HorizontalAlignment="Left" Margin="81,143,0,0" VerticalAlignment="Top" Height="86" RenderTransformOrigin="0.5,0.5" Width="389" FontFamily="Ink Free" FontWeight="Bold" FontSize="14">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -19,7 +18,18 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Button x:Name="SignInbtn_Copy" Content="Sign In" HorizontalAlignment="Left" Margin="174,230,0,0" VerticalAlignment="Top" Width="170" FontFamily="Ink Free" FontSize="14" RenderTransformOrigin="0.431,-1.218" Height="50" Click="SigninButton_Click" FontWeight="Bold"/>
+        <Button x:Name="MemberBtn" Content="Member" HorizontalAlignment="Left" Margin="80,220,0,0" VerticalAlignment="Top" Width="128" Height="103" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Click="MemberBtn_Click"/>
+        <Button x:Name="LibrarianBtn" Content="Librarain" HorizontalAlignment="Left" Margin="341,220,0,0" VerticalAlignment="Top" Width="128" Height="103" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Click="LibrarianBtn_Click"/>
+        <Separator HorizontalAlignment="Left" Margin="75,322,0,0" VerticalAlignment="Top" Height="86" RenderTransformOrigin="0.5,0.5" Width="389" FontFamily="Ink Free" FontWeight="Bold" FontSize="14">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
 
 
     </Grid>

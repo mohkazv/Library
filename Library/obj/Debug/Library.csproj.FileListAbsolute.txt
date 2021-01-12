@@ -39,3 +39,7 @@ C:\Users\mohka\source\repos\Library\Library\obj\Debug\Library.csproj.GenerateRes
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\Library.exe
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\Library.pdb
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\LibrarianLoginPage.g.cs
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberLoginPage.g.cs
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\LibrarianLoginPage.baml
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberLoginPage.baml

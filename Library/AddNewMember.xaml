@@ -5,18 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="AddNewMember" Height="300" Width="705.333">
-    <Grid Margin="2,0,-66.333,6.667">
+        Title="AddNewMember" Height="300" Width="647.333">
+    <Grid Margin="2,0,2.667,6.667">
         <Label Content="First Name :" HorizontalAlignment="Left" Margin="25,14,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="FirstNameTxtBx" HorizontalAlignment="Left" Margin="102,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Ink Free" FontWeight="Bold"/>
         <Label Content="LastName :" HorizontalAlignment="Left" Margin="254,14,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold"/>
         <TextBox x:Name="LastNameTxtBx" HorizontalAlignment="Left" Margin="325,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Ink Free" FontWeight="Bold"/>
-        <ComboBox x:Name="GenderCmBx" Height="21" Margin="503,15,182,0" VerticalAlignment="Top" Text="Gender" FontFamily="Ink Free" FontWeight="Bold"
-            IsEditable="true"  IsReadOnly="true" 
-            IsDropDownOpen="False" StaysOpenOnEdit="True" >
-            <ComboBoxItem Content="Male" HorizontalAlignment="Left" Width="117.333333333333"/>
-            <ComboBoxItem Content="Female" HorizontalAlignment="Left" Width="117.333333333333"/>
-        </ComboBox>
         <Label Content="Email :" HorizontalAlignment="Left" Margin="56,45,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="EmailTxtBx" HorizontalAlignment="Left" Margin="102,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" FontFamily="Ink Free" FontWeight="Bold"/>
         <Label Content="Username :" HorizontalAlignment="Left" Margin="336,45,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
@@ -41,6 +35,12 @@
         <Label Content="Education :" HorizontalAlignment="Left" Margin="192,105,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="EducationTxtBx" HorizontalAlignment="Left" Margin="267,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" FontFamily="Ink Free" FontWeight="Bold"/>
         <PasswordBox x:Name="PasswordTxtBx" HorizontalAlignment="Left" Margin="406,75,0,0" VerticalAlignment="Top" Width="212" PasswordChar="*" FontFamily="Ink Free" FontWeight="Bold"/>
+        <ComboBox x:Name="GenderCmBx" Height="21" Margin="496,17,18,0" VerticalAlignment="Top" Text="Gender" FontFamily="Ink Free" FontWeight="Bold"
+            IsEditable="true"  IsReadOnly="true" 
+            IsDropDownOpen="False" StaysOpenOnEdit="True" >
+            <ComboBoxItem Content="Male" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="Female" HorizontalAlignment="Left" Width="117.333333333333"/>
+        </ComboBox>
 
     </Grid>
 </Window>
