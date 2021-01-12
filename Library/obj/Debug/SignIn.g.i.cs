@@ -49,17 +49,17 @@ namespace Library {
         #line hidden
         
         
-        #line 11 "..\..\SignIn.xaml"
+        #line 12 "..\..\SignIn.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox PassworTxtBx;
+        internal System.Windows.Controls.Button SignInBtn;
         
         #line default
         #line hidden
         
         
-        #line 13 "..\..\SignIn.xaml"
+        #line 14 "..\..\SignIn.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button SignInBtn;
+        internal System.Windows.Controls.PasswordBox PasswordTxtBx;
         
         #line default
         #line hidden
@@ -98,16 +98,16 @@ namespace Library {
             this.InfoTxtBx = ((System.Windows.Controls.TextBox)(target));
             return;
             case 2:
-            this.PassworTxtBx = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 3:
             this.SignInBtn = ((System.Windows.Controls.Button)(target));
             
-            #line 13 "..\..\SignIn.xaml"
+            #line 12 "..\..\SignIn.xaml"
             this.SignInBtn.Click += new System.Windows.RoutedEventHandler(this.SignInBtn_Click);
             
             #line default
             #line hidden
+            return;
+            case 3:
+            this.PasswordTxtBx = ((System.Windows.Controls.PasswordBox)(target));
             return;
             }
             this._contentLoaded = true;
