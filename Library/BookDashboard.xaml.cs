@@ -26,21 +26,26 @@ namespace Library
 
         private void AddNewBookBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new AddNewBook().Show();
+            Close();
         }
 
         private void EditBookInformationBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new EditBookInformation().Show();
+            Close();
         }
 
         private void BorrowBookBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new BorrowBook().Show();
+            Close();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
+            new LibrarianDashboard().Show();
+            Close();
 
         }
     }

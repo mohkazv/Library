@@ -26,17 +26,20 @@ namespace Library
 
         private void EditMembershipInformationBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new SearchEditBookInformation().Show();
+            Close();
         }
 
         private void AddNewMemberBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new AddNewBook().Show();
+            Close();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new LibrarianDashboard().Show();
+            Close();
         }
     }
 }

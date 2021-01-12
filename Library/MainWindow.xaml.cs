@@ -27,11 +27,14 @@ namespace Library
 
         private void LibrarianBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new LibrarianLoginPage().Show();
+            Close();
         }
 
         private void MemberBtn_Click(object sender, RoutedEventArgs e)
         {
+            new MemberLoginPage().Show();
+            Close();
 
         }
     }

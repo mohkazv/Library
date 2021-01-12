@@ -26,22 +26,28 @@ namespace Library
 
         private void MemberDashboardBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new LibrarianMemberDashboard().Show();
+            Close();
         }
 
         private void BookDashboardBtn_Click(object sender, RoutedEventArgs e)
         {
+            new BookDashboard().Show();
+            Close();
+
 
         }
 
         private void AccountDashboardBtn_Click(object sender, RoutedEventArgs e)
         {
+            new LibrarianAccountDashboard().Show();
+            Close();
 
         }
 
         private void LogoutBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

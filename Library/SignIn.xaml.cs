@@ -19,13 +19,16 @@ namespace Library
     /// </summary>
     public partial class SignIn : Window
     {
+        public static string SetValueForUsername = "";
         public SignIn()
         {
             InitializeComponent();
         }
-
+    
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
         {
+            SetValueForUsername = InfoTxtBx.Text;
+
 
         }
     }

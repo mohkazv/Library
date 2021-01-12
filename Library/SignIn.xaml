@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
         Title="SignIn" Height="240" Width="420">
-    <Grid Margin="0,0,-1.667,-13.373">
+    <Grid Margin="0,0,-1.667,-4.333">
         <TextBox x:Name="InfoTxtBx" HorizontalAlignment="Left" Margin="92,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" FontWeight="Bold" FontFamily="Ink Free" Height="24"/>
         <TextBox x:Name="PassworTxtBx" HorizontalAlignment="Left" Margin="91,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" FontWeight="Bold" FontFamily="Ink Free" Height="24"/>
         <Label Content="Password " HorizontalAlignment="Left" Margin="88,95,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Width="71"/>

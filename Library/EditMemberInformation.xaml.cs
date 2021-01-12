@@ -38,7 +38,7 @@ namespace Library
                 string Email = EmailTxtBx.Text;
                 string Username = UsernameTxtBx.Text;
                 string PhoneNumber = PhoneNumberTxtBx.Text;
-                string Password = PasswordTxtBx.Text;
+                string Password = PasswordTxtBx.Password;
                 string Education = EducationTxtBx.Text;
                 string BirthDate = BirthDateDP.Text;
 
@@ -59,7 +59,7 @@ namespace Library
 
                 else
                 {
-                    con = new SqlConnection(@"Data Source=.;Initial Catalog=Library_DB;Integrated Security=True");
+                    con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                     con.Open();
 
                     cmd = new SqlCommand("Delete From Users Where FirstName=@FirstName and LastName=@LastName and Gender=@Gender and Email=@Email and Username=@Username and PhoneNumber=@PhoneNumber and Password=@Password and Education=@Education and BirthDate=@BirthDate", con);
@@ -70,7 +70,7 @@ namespace Library
                     cmd.Parameters.AddWithValue("@Email", EmailTxtBx.Text);
                     cmd.Parameters.AddWithValue("@Username", UsernameTxtBx.Text);
                     cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumberTxtBx.Text);
-                    cmd.Parameters.AddWithValue("@Password", PasswordTxtBx.Text);
+                    cmd.Parameters.AddWithValue("@Password", PasswordTxtBx.Password);
                     cmd.Parameters.AddWithValue("@Education", EducationTxtBx.Text);
                     cmd.Parameters.AddWithValue("@BirthDate", BirthDateDP.Text);
                     int deleted = cmd.ExecuteNonQuery();
@@ -80,19 +80,12 @@ namespace Library
                                   button: MessageBoxButton.OK,
                                   icon: MessageBoxImage.Information);
                 }
-
-
-
-
             }
+
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-
-
 
         }
 
@@ -109,7 +102,7 @@ namespace Library
 
                 con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                 con.Open();
-                cmd = new SqlCommand("INSERT INTO Users (FirstName,LastName,Gender,Email,Username,PhoneNumber,Password,BirthDate,RegisterDate) VALUES (@FirstName,@LastName,@Gender,@Email,@Username,@PhoneNumber,@Password,@BirthDate,@RegisterDate)", con);
+                cmd = new SqlCommand("Update Users Set FirstName=@FirstName and LastName=@LastName and Gender=@Gender and Email=@Email and Username=@Username and PhoneNumber=@PhoneNumber and Password=@Password and Education=@Education and BirthDate=@BirthDate ", con);
                 cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
                 cmd.Parameters.Add("@LastName", LastNameTxtBx.Text);
                 cmd.Parameters.Add("@Gender", GenderCmBx.Text);
@@ -137,7 +130,7 @@ namespace Library
         {
             try
             {
-                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library_DB;Integrated Security=True");
+                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                 con.Open();
                 cmd = new SqlCommand("Select * from Users where Id ='" + SearchEditMemberInformation.SetValueForUserId + "'", con);
 
@@ -152,7 +145,7 @@ namespace Library
                     EducationTxtBx.Text = dr.GetValue(5).ToString();
                     PhoneNumberTxtBx.Text = dr.GetValue(6).ToString();
                     BirthDateDP.DisplayDate = (DateTime)dr.GetValue(7);
-                    PasswordTxtBx.Text = dr.GetValue(8).ToString();
+                    PasswordTxtBx.Password = dr.GetValue(8).ToString();
 
 
                 }

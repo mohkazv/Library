@@ -30,7 +30,8 @@ namespace Library
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new BookDashboard().Show();
+            Close();
         }
 
         private void BorrowBtn_Click(object sender, RoutedEventArgs e)

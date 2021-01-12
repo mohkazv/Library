@@ -56,7 +56,7 @@ namespace Library
             }
             else
             {
-                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library_DB;Integrated Security=True");
+                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                 con.Open();
 
                 cmd = new SqlCommand("Delete From Books Where BookName=@BookName and CategoryTitle=@CategoryTitle and Avilable=@Available and PublishedYear=@PublishedYear and Edition=@Edition and AuthorName=@AuthorName and ISBN=@ISBN and Language=@Language ", con);
@@ -95,7 +95,7 @@ namespace Library
 
                 con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                 con.Open();
-                cmd = new SqlCommand("INSERT INTO Books (BookName,CategoryTitle,Available,PublishedYear,Edition,AuthorName,ISBN,Language,RegisterDate) VALUES (@BookName,@CategoryTitle,@Available,@PublishedYear,@Edition,@AuthorName,@ISBN,@Language,@RegisterDate)", con);
+                cmd = new SqlCommand("Update Books Set BookName=@BookName and CategoryTitle=@CategoryTitle and Avilable=@Available and PublishedYear=@PublishedYear and Edition=@Edition and AuthorName=@AuthorName and ISBN=@ISBN and Language=@Language ", con);
                 cmd.Parameters.Add("@BookName", BookNameTxtBx.Text);
                 cmd.Parameters.Add("@CategoryTitle", CategoryTxtBx.Text);
                 cmd.Parameters.Add("@Available", AvailableTxtBx.Text);
@@ -131,7 +131,7 @@ namespace Library
         {
             try
             {
-                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library_DB;Integrated Security=True");
+                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                 con.Open();
                 cmd = new SqlCommand("Select * From Books where Id ='" + SearchEditBookInformation.SetValueForBookId + "'", con);
 
