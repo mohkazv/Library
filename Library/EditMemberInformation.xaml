@@ -1,11 +1,11 @@
-﻿<Window x:Class="Library.EditMemberInformation"
+﻿<Window x:Name="EditMemberInformatin1" x:Class="Library.EditMemberInformation"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="EditMemberInformation" Height="330" Width="700">
+        Title="EditMemberInformation" Height="325.277" Width="700" Loaded="EditMemberInformatin1_Loaded">
     <Grid Margin="-3,3,-18.667,-11.373">
         <Label Content="First Name :" HorizontalAlignment="Left" Margin="25,14,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="FirstNameTxtBx" HorizontalAlignment="Left" Margin="102,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Ink Free" FontWeight="Bold"/>
@@ -23,7 +23,6 @@
         <Label Content="Password :" HorizontalAlignment="Left" Margin="339,70,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="PhoneNumberTxtBx" HorizontalAlignment="Left" Margin="102,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" FontFamily="Ink Free" FontWeight="Bold"/>
         <Label Content="Phone Number :" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
-        <TextBox x:Name="PasswordTxtBx" HorizontalAlignment="Left" Margin="406,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" FontFamily="Ink Free" FontWeight="Bold"/>
         <Label Content="Birth Date :" HorizontalAlignment="Left" Margin="197,136,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24" RenderTransformOrigin="0.513,0.745"/>
         <DatePicker x:Name="BirthDateDP" HorizontalAlignment="Left" Margin="273,136,0,0" VerticalAlignment="Top" Width="218" FontFamily="Ink Free" FontWeight="Bold" Height="27"/>
         <Separator HorizontalAlignment="Left" Margin="102,214,0,0" VerticalAlignment="Top" Height="24" Width="522" RenderTransformOrigin="0.5,0.5">
@@ -42,6 +41,7 @@
         <Separator HorizontalAlignment="Left" Margin="152,154,0,0" VerticalAlignment="Top" Height="40" Width="397"/>
         <Label Content="Education :" HorizontalAlignment="Left" Margin="206,105,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="EducationTxtBx" HorizontalAlignment="Left" Margin="275,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" FontFamily="Ink Free" FontWeight="Bold"/>
+        <PasswordBox x:Name="PasswordTxtBx" HorizontalAlignment="Left" Margin="406,75,0,0" VerticalAlignment="Top" Width="212" PasswordChar="*" FontFamily="Ink Free" FontWeight="Bold"/>
 
     </Grid>
 </Window>

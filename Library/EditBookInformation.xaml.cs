@@ -92,6 +92,45 @@ namespace Library
         {
             try
             {
+
+                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                con.Open();
+                cmd = new SqlCommand("INSERT INTO Books (BookName,CategoryTitle,Available,PublishedYear,Edition,AuthorName,ISBN,Language,RegisterDate) VALUES (@BookName,@CategoryTitle,@Available,@PublishedYear,@Edition,@AuthorName,@ISBN,@Language,@RegisterDate)", con);
+                cmd.Parameters.Add("@BookName", BookNameTxtBx.Text);
+                cmd.Parameters.Add("@CategoryTitle", CategoryTxtBx.Text);
+                cmd.Parameters.Add("@Available", AvailableTxtBx.Text);
+                cmd.Parameters.Add("@PublishedYear", PublishYearTxtBx.Text);
+                cmd.Parameters.Add("@Edition", EditionTxtBx.Text);
+                cmd.Parameters.Add("@AuthorName", AuthorTxtBx.Text);
+                cmd.Parameters.Add("@ISBN", ISBNTxtBx.Text);
+                cmd.Parameters.Add("@Language", LanguageTxtBx.Text);
+                cmd.Parameters.Add("@RegisterDate", DateTime.Now);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show(
+                           messageBoxText: $"Book «{BookNameTxtBx.Text}» successfully Added",
+                           caption: "Successful Adding",
+                           button: MessageBoxButton.OK,
+                           icon: MessageBoxImage.Information);
+                con.Close();
+            }
+            catch (Exception b)
+            {
+                MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+            }
+
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new SearchEditBookInformation().Show();
+            Close();
+
+        }
+
+        private void EditBookInformation1_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
                 con = new SqlConnection(@"Data Source=.;Initial Catalog=Library_DB;Integrated Security=True");
                 con.Open();
                 cmd = new SqlCommand("Select * From Books where Id ='" + SearchEditBookInformation.SetValueForBookId + "'", con);
@@ -100,13 +139,13 @@ namespace Library
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                      BookNameTxtBx.Text = dr.GetValue(0).ToString();
-                      CategoryTxtBx.Text = dr.GetValue(1).ToString();
-                      AvailableTxtBx.Text = dr.GetValue(2).ToString();
-                      PublishYearTxtBx.Text = dr.GetValue(3).ToString();
-                      EditionTxtBx.Text = dr.GetValue(4).ToString(); 
-                      AuthorTxtBx.Text = dr.GetValue(5).ToString();
-                      ISBNTxtBx.Text = dr.GetValue(6).ToString();
+                    BookNameTxtBx.Text = dr.GetValue(0).ToString();
+                    CategoryTxtBx.Text = dr.GetValue(1).ToString();
+                    AvailableTxtBx.Text = dr.GetValue(2).ToString();
+                    PublishYearTxtBx.Text = dr.GetValue(3).ToString();
+                    EditionTxtBx.Text = dr.GetValue(4).ToString();
+                    AuthorTxtBx.Text = dr.GetValue(5).ToString();
+                    ISBNTxtBx.Text = dr.GetValue(6).ToString();
 
                 }
                 con.Close();
@@ -115,12 +154,6 @@ namespace Library
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void BackBtn_Click(object sender, RoutedEventArgs e)
-        {
-            new SearchEditBookInformation().Show();
-            Close();
 
         }
     }
