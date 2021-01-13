@@ -20,6 +20,8 @@ namespace Library
     /// </summary>
     public partial class MainWindow : Window
     {
+       public static bool Librarian = false;
+       public static bool Member = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,12 +29,14 @@ namespace Library
 
         private void LibrarianBtn_Click(object sender, RoutedEventArgs e)
         {
+            Librarian = true;
             new LibrarianLoginPage().Show();
             Close();
         }
 
         private void MemberBtn_Click(object sender, RoutedEventArgs e)
         {
+            Member = true;
             new MemberLoginPage().Show();
             Close();
 

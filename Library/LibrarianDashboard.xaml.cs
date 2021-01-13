@@ -56,16 +56,18 @@ namespace Library
 
         private void LibrarainDashboard1_Loaded(object sender, RoutedEventArgs e)
         {
+            
             try
             {
                 con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                 con.Open();
-                cmd = new SqlCommand("Select FirstName and LastName from Users where Email='" + SignIn.SetValueForEmail + "'", con);
+                cmd = new SqlCommand("Select FirstName,LastName from Admins where Email='" + SignIn.SetValueForEmail + "'", con);
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    NameLbl.Content = dr.GetValue(0).ToString();
+                   FullNameTxB.Text = dr.GetValue(0).ToString()+ " " + dr.GetValue(1).ToString();
+
                 }
                 con.Close();
 

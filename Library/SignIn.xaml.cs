@@ -31,26 +31,50 @@ namespace Library
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
         {
             SetValueForEmail = InfoTxtBx.Text;
-
-            con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
-            con.Open();
-            
-            SqlCommand cmd = new SqlCommand("select Email,Password from Admins where Email='" + InfoTxtBx.Text + "'and Password='" + PasswordTxtBx.Password + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+            if (MainWindow.Librarian == true)
             {
-                MessageBox.Show("Login sucess Welcome  ");
-                new LibrarianDashboard().Show();
-                Close();
-                
+                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("select Email,Password from Admins where Email='" + InfoTxtBx.Text + "'and Password='" + PasswordTxtBx.Password + "'", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Login sucess Welcome  ");
+                    new LibrarianDashboard().Show();
+                    Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Login please check username and password");
+                }
+                con.Close();
             }
             else
             {
-                MessageBox.Show("Invalid Login please check username and password");
+                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("select Email,Password from Users where Email='" + InfoTxtBx.Text + "'and Password='" + PasswordTxtBx.Password + "'", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Login sucess Welcome  ");
+                    new LibrarianDashboard().Show();
+                    Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Login please check username and password");
+                }
+                con.Close();
             }
-            con.Close();
         }
 
         private void SignInPage_Loaded(object sender, RoutedEventArgs e)
