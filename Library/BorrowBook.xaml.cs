@@ -34,6 +34,7 @@ namespace Library
             Close();
         }
 
+        [Obsolete]
         private void BorrowBtn_Click(object sender, RoutedEventArgs e)
         {
             try

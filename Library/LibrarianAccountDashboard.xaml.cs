@@ -33,6 +33,7 @@ namespace Library
             Close();
         }
 
+        [Obsolete]
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -70,7 +71,7 @@ namespace Library
             {
                 con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                 con.Open();
-                cmd = new SqlCommand("Select * From Books where Username ='" + SignIn.SetValueForUsername + "'", con);
+                cmd = new SqlCommand("Select * From Books where Username ='" + SignIn.SetValueForEmail + "'", con);
 
 
                 SqlDataReader dr = cmd.ExecuteReader();

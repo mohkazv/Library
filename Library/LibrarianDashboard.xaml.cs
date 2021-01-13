@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Library
 {
@@ -19,6 +21,8 @@ namespace Library
     /// </summary>
     public partial class LibrarianDashboard : Window
     {
+        SqlCommand cmd;
+        SqlConnection con;
         public LibrarianDashboard()
         {
             InitializeComponent();
@@ -48,6 +52,28 @@ namespace Library
         private void LogoutBtn_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void LibrarainDashboard1_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
+                con.Open();
+                cmd = new SqlCommand("Select FirstName and LastName from Users where Email='" + SignIn.SetValueForEmail + "'", con);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    NameLbl.Content = dr.GetValue(0).ToString();
+                }
+                con.Close();
+
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

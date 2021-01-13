@@ -1,17 +1,18 @@
-﻿<Window x:Class="Library.LibrarianDashboard"
+﻿<Window x:Name="LibrarainDashboard1" x:Class="Library.LibrarianDashboard"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="LibrarianDashboard" Height="300" Width="450">
-    <Grid Margin="0,0,-6.667,-13.373">
+        Title="LibrarianDashboard" Height="300" Width="450" Loaded="LibrarainDashboard1_Loaded">
+    <Grid Margin="0,0,-3.667,-1.333">
         <Button x:Name="MemberDashboardBtn" Content="Member&#xA;Dashboard" HorizontalAlignment="Left" Margin="55,60,0,0" VerticalAlignment="Top" Height="85" Width="94" FontFamily="Ink Free" FontWeight="Bold" Click="MemberDashboardBtn_Click"/>
         <Button x:Name="BookDashboardBtn" Content="Book &#xA;Dashboard" HorizontalAlignment="Left" Margin="175,60,0,0" VerticalAlignment="Top" Height="85" Width="94" FontFamily="Ink Free" FontWeight="Bold" Click="BookDashboardBtn_Click"/>
         <Button x:Name="AccountDashboardBtn" Content="Account &#xA;Dashboard" HorizontalAlignment="Left" Margin="295,60,0,0" VerticalAlignment="Top" Height="85" Width="94" FontFamily="Ink Free" FontWeight="Bold" Click="AccountDashboardBtn_Click"/>
         <Separator HorizontalAlignment="Left" Margin="35,171,0,0" VerticalAlignment="Top" Height="13" Width="376"/>
         <Button x:Name="LogoutBtn" Content="Log out" HorizontalAlignment="Left" Margin="169,199,0,0" VerticalAlignment="Top" Width="90" FontFamily="Ink Free" FontWeight="Bold" Height="24" Click="LogoutBtn_Click"/>
+        <Label x:Name="NameLbl" Content="" HorizontalAlignment="Left" Margin="4,2,0,0" VerticalAlignment="Top" Width="438" FontFamily="Ink Free" FontWeight="Bold" FontSize="14"/>
 
     </Grid>
 </Window>

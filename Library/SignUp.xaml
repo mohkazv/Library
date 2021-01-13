@@ -18,9 +18,9 @@
         <Label Content="Password :" HorizontalAlignment="Left" Margin="339,70,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="PhoneNumberTxtBx" HorizontalAlignment="Left" Margin="102,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" FontFamily="Ink Free" FontWeight="Bold"/>
         <Label Content="Phone Number :" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
-        <Label Content="Birth Date :" HorizontalAlignment="Left" Margin="185,140,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
-        <DatePicker x:Name="BirthDateDP" HorizontalAlignment="Left" Margin="262,140,0,0" VerticalAlignment="Top" Width="223" FontFamily="Ink Free" FontWeight="Bold" Height="25"/>
-        <Separator HorizontalAlignment="Left" Margin="86,165,0,0" VerticalAlignment="Top" Height="24" Width="522" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Birth Date :" HorizontalAlignment="Left" Margin="166,142,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
+        <DatePicker x:Name="BirthDateDP" HorizontalAlignment="Left" Margin="243,142,0,0" VerticalAlignment="Top" Width="223" FontFamily="Ink Free" FontWeight="Bold" Height="25"/>
+        <Separator HorizontalAlignment="Left" Margin="66,169,0,0" VerticalAlignment="Top" Height="24" Width="522" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -30,9 +30,9 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Button x:Name="SignUpBtn" Content="Sign Up" HorizontalAlignment="Left" Margin="298,201,0,0" VerticalAlignment="Top" Width="84" FontFamily="Ink Free" FontWeight="Bold" Height="23" Click="SignUpBtn_Click"/>
-        <Label Content="Education :" HorizontalAlignment="Left" Margin="193,105,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
-        <TextBox x:Name="EducationTxtBx" HorizontalAlignment="Left" Margin="264,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" FontFamily="Ink Free" FontWeight="Bold"/>
+        <Button x:Name="SignUpBtn" Content="Sign Up" HorizontalAlignment="Left" Margin="271,201,0,0" VerticalAlignment="Top" Width="84" FontFamily="Ink Free" FontWeight="Bold" Height="23" Click="SignUpBtn_Click"/>
+        <Label Content="Education :" HorizontalAlignment="Left" Margin="174,107,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
+        <TextBox x:Name="EducationTxtBx" HorizontalAlignment="Left" Margin="245,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" FontFamily="Ink Free" FontWeight="Bold"/>
         <ComboBox x:Name="GenderCmBx" Height="21" Margin="529,16,39,0" VerticalAlignment="Top" Text="Gender" FontFamily="Ink Free" FontWeight="Bold" IsEditable="true"  IsReadOnly="true" 
             IsDropDownOpen="False" StaysOpenOnEdit="True" RenderTransformOrigin="0.555,0.551"  >
             <ComboBox.RenderTransform>

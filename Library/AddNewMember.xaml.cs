@@ -28,6 +28,7 @@ namespace Library
             InitializeComponent();
         }
 
+        [Obsolete]
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -47,7 +48,7 @@ namespace Library
                 cmd.Parameters.Add("@RegisterDate", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(
-                        messageBoxText: $"User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Added",
+                        messageBoxText: $"Admin «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Added",
                         caption: "Successful Adding",
                         button: MessageBoxButton.OK,
                         icon: MessageBoxImage.Information);
@@ -62,7 +63,8 @@ namespace Library
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new LibrarianDashboard().Show();
+            Close();
         }
     }
 }

@@ -88,6 +88,7 @@ namespace Library
 
         }
 
+        [Obsolete]
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             try

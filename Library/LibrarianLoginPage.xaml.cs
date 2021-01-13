@@ -26,12 +26,15 @@ namespace Library
 
         private void SigninButton_Click(object sender, RoutedEventArgs e)
         {
+            new SignIn().Show();
+            Close();
 
         }
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
-
+            new SignUp().Show();
+            Close();
         }
     }
 }

@@ -43,3 +43,9 @@ C:\Users\mohka\source\repos\Library\Library\obj\Debug\LibrarianLoginPage.g.cs
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberLoginPage.g.cs
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\LibrarianLoginPage.baml
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberLoginPage.baml
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberAccountDashboard.g.cs
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberborrowedBook.g.cs
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberDashboard.g.cs
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberAccountDashboard.baml
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberborrowedBook.baml
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberDashboard.baml

@@ -21,8 +21,8 @@ namespace Library
     /// </summary>
     public partial class SignIn : Window
     {
-       
-        public static string SetValueForUsername = "";
+        SqlConnection con;
+        public static string SetValueForEmail = "";
         public SignIn()
         {
             InitializeComponent();
@@ -30,35 +30,34 @@ namespace Library
     
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetValueForUsername = InfoTxtBx.Text;
+            SetValueForEmail = InfoTxtBx.Text;
 
-            if (InfoTxtBx.Text.Length == 0)
+            con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+            con.Open();
+            
+            SqlCommand cmd = new SqlCommand("select Email,Password from Admins where Email='" + InfoTxtBx.Text + "'and Password='" + PasswordTxtBx.Password + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
             {
-                MessageBox.Show( "Enter an email.");
-                InfoTxtBx.Focus();
-            }
-            else if (!Regex.IsMatch(InfoTxtBx.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
-            {
-              MessageBox.Show("Enter a valid email.");
-                InfoTxtBx.Select(0, InfoTxtBx.Text.Length);
-                InfoTxtBx.Focus();
+                MessageBox.Show("Login sucess Welcome  ");
+                new LibrarianDashboard().Show();
+                Close();
+                
             }
             else
             {
-                string email = InfoTxtBx.Text;
-                string password = PasswordTxtBx.Password;
-                SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
-                con.Open();
-                SqlCommand cmd = new SqlCommand("Select * from Registration where Email='" + email + "'  and Password='" + password + "'", con);
-                cmd.CommandType = CommandType.Text;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = cmd;
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet);
-                con.Close();
+                MessageBox.Show("Invalid Login please check username and password");
             }
+            con.Close();
         }
-      
+
+        private void SignInPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+            con.Open();
+        }
     }
 
 
