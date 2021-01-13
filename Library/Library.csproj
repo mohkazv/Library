@@ -85,6 +85,15 @@
     <Compile Include="LibrarianMemberDashboard.xaml.cs">
       <DependentUpon>LibrarianMemberDashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MemberAccountDashboard.xaml.cs">
+      <DependentUpon>MemberAccountDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MemberborrowedBook.xaml.cs">
+      <DependentUpon>MemberborrowedBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MemberDashboard.xaml.cs">
+      <DependentUpon>MemberDashboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MemberLoginPage.xaml.cs">
       <DependentUpon>MemberLoginPage.xaml</DependentUpon>
     </Compile>
@@ -152,6 +161,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MemberAccountDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MemberborrowedBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MemberDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MemberLoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
