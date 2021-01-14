@@ -94,5 +94,20 @@ namespace Library
             }
 
         }
+
+        private void SignUp1_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (MainWindow.Librarian == true) 
+            {
+                textblockTxB.Text = "Sign Up as Librarian :";
+                
+            }
+            else
+            {
+                textblockTxB.Text = "Sign Up as Member :";
+            }
+        }
+
     }
-}
+    }
+

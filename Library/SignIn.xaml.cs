@@ -33,6 +33,8 @@ namespace Library
             SetValueForEmail = InfoTxtBx.Text;
             if (MainWindow.Librarian == true)
             {
+                
+
                 con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                 con.Open();
 
@@ -55,6 +57,7 @@ namespace Library
             }
             else
             {
+                
                 con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                 con.Open();
 
@@ -82,6 +85,16 @@ namespace Library
         {
             SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
             con.Open();
+
+
+            if (MainWindow.Librarian == true)
+            {
+                textblockTxB.Text = "Sign in as Librarian :";
+            }
+            else
+            {
+                textblockTxB.Text = "Sign in as Member :";
+            }
         }
     }
 
