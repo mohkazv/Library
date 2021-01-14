@@ -66,7 +66,7 @@ namespace Library
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                   FullNameTxB.Text = dr.GetValue(0).ToString()+ " " + dr.GetValue(1).ToString();
+                   FullNameTxB.Text = "Loged in as Librarian" + " " + dr.GetValue(0).ToString()+ " " + dr.GetValue(1).ToString();
 
                 }
                 con.Close();

@@ -68,7 +68,7 @@ namespace Library
                 if (dt.Rows.Count > 0)
                 {
                     MessageBox.Show("Login sucess Welcome  ");
-                    new LibrarianDashboard().Show();
+                    new MemberDashboard().Show();
                     Close();
 
                 }

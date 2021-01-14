@@ -15,7 +15,7 @@ using System.Data.Entity.Core.Objects;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Globalization;
 namespace Library
 {
     /// <summary>
@@ -23,9 +23,7 @@ namespace Library
     /// </summary>
     public partial class MemberborrowedBook : Window
     {
-        SqlCommand cmd;
-        SqlConnection con;
-
+       
         public MemberborrowedBook()
         {
             InitializeComponent();
@@ -41,12 +39,26 @@ namespace Library
             new MemberDashboard().Show();
                 Close();
         }
-
+       
         private void MemberBorrowedBook1_Loaded(object sender, RoutedEventArgs e)
         {
-           
+            string userId = MemberDashboard.SetValueForUserId;
 
+            using (SqlConnection sqlConn = new SqlConnection())
+            {
+                sqlConn.ConnectionString = "Data Source =.; Initial Catalog = Library; Integrated Security = True";
+                string queryString = "select ReturnDate,DeadlineDate,BookName from BorrowedBooks Inner join Books on BorrowedBooks.BookId = Books.Id  where UserId = '"+ userId  + "'";
+                sqlConn.Open();
+
+                DataTable table = new DataTable();
+                SqlDataAdapter a = new SqlDataAdapter(queryString, sqlConn);
+                a.Fill(table);
+
+                this.MemberBorrowedBookDG.ItemsSource = table.DefaultView;
+            }
 
         }
+
+        
     }
 }

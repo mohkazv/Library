@@ -109,11 +109,6 @@
     <Compile Include="LibrarianMemberDashboard.xaml.cs">
       <DependentUpon>LibrarianMemberDashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LibraryDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="MemberAccountDashboard.xaml.cs">
       <DependentUpon>MemberAccountDashboard.xaml</DependentUpon>
     </Compile>
@@ -241,17 +236,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="LibraryDataSet.xsc">
-      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LibraryDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LibraryDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LibraryDataSet.xss">
-      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -260,15 +244,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Library.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Library_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Library.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

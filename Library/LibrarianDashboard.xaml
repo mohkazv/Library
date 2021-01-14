@@ -12,7 +12,8 @@
         <Button x:Name="AccountDashboardBtn" Content="Account &#xA;Dashboard" HorizontalAlignment="Left" Margin="295,60,0,0" VerticalAlignment="Top" Height="85" Width="94" FontFamily="Ink Free" FontWeight="Bold" Click="AccountDashboardBtn_Click"/>
         <Separator HorizontalAlignment="Left" Margin="35,171,0,0" VerticalAlignment="Top" Height="13" Width="376"/>
         <Button x:Name="LogoutBtn" Content="Log out" HorizontalAlignment="Left" Margin="169,199,0,0" VerticalAlignment="Top" Width="90" FontFamily="Ink Free" FontWeight="Bold" Height="24" Click="LogoutBtn_Click"/>
-        <TextBlock x:Name="FullNameTxB" HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" Height="22" FontFamily="Ink Free" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="FullNameTxB" HorizontalAlignment="Left" Margin="50,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" Height="22" FontFamily="Ink Free" FontWeight="Bold" FontSize="14"/>
+        <Separator HorizontalAlignment="Left" Margin="48,37,0,0" VerticalAlignment="Top" Height="13" Width="376"/>
 
     </Grid>
 </Window>

@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.Data;
+using System.Data.SqlClient;
 namespace Library
 {
     /// <summary>
@@ -19,6 +20,9 @@ namespace Library
     /// </summary>
     public partial class MemberDashboard : Window
     {
+        SqlCommand cmd;
+        SqlConnection con;
+        public static string SetValueForUserId;
         public MemberDashboard()
         {
             InitializeComponent();
@@ -44,6 +48,29 @@ namespace Library
         private void LogoutBtn_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void MemberDashboard1_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
+                con.Open();
+                cmd = new SqlCommand("select FirstName,LastName,Id from Users where Email='" + SignIn.SetValueForEmail + "'", con);
+
+                 SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    FullNameTxtB.Text = "Loged in as Member" + " " + dr.GetValue(0).ToString() + " " + dr.GetValue(1).ToString();
+                     SetValueForUserId = dr.GetValue(2).ToString();
+                }
+                con.Close();
+
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

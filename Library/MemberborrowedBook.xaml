@@ -5,16 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="MemberborrowedBook" Height="500" Width="600" Loaded="MemberBorrowedBook1_Loaded">
-    <Window.Resources>
-        <local:LibraryDataSet x:Key="libraryDataSet"/>
-        <CollectionViewSource x:Key="borrowedBooksViewSource" Source="{Binding BorrowedBooks, Source={StaticResource libraryDataSet}}"/>
-    </Window.Resources>
-    <Grid Margin="0,0,3.333,3.667" DataContext="{StaticResource borrowedBooksViewSource}">
-        <Separator HorizontalAlignment="Left" Margin="145,362,0,0" VerticalAlignment="Top" Height="58" Width="332" FontFamily="Ink Free" FontWeight="Bold"/>
-        <Button x:Name="ExtendDateBtn" Content="Extend Date" HorizontalAlignment="Left" Margin="220,410,0,0" VerticalAlignment="Top" Width="72" Click="ExtendDateBtn_Click" FontFamily="Ink Free" FontWeight="Bold"/>
-        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="320,410,0,0" VerticalAlignment="Top" Width="72" FontFamily="Ink Free" FontWeight="Bold" Click="BackBtn_Click"/>
-        <DataGrid x:Name="dgrid" HorizontalAlignment="Left" Height="245" Margin="19,7,0,0" VerticalAlignment="Top" Width="552"/>
+        Title="MemberborrowedBook" Height="500" Width="505.333" Loaded="MemberBorrowedBook1_Loaded">
+
+    <Grid>
+        <Separator HorizontalAlignment="Left" Margin="88,368,0,0" VerticalAlignment="Top" Height="58" Width="332" FontFamily="Ink Free" FontWeight="Bold"/>
+        <Button x:Name="ExtendDateBtn" Content="Extend Date" HorizontalAlignment="Left" Margin="163,416,0,0" VerticalAlignment="Top" Width="72" Click="ExtendDateBtn_Click" FontFamily="Ink Free" FontWeight="Bold"/>
+        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="263,416,0,0" VerticalAlignment="Top" Width="72" FontFamily="Ink Free" FontWeight="Bold" Click="BackBtn_Click"/>
+        <DataGrid x:Name="MemberBorrowedBookDG" HorizontalAlignment="Left" Height="351" Margin="7,12,0,0" VerticalAlignment="Top" Width="481" />
 
     </Grid>
 </Window>
