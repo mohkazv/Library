@@ -32,5 +32,15 @@ namespace Library.Properties {
                 return ((string)(this["Library_DBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Library;Integrated Security=True")]
+        public string LibraryConnectionString {
+            get {
+                return ((string)(this["LibraryConnectionString"]));
+            }
+        }
     }
 }

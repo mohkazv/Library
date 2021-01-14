@@ -49,3 +49,12 @@ C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberDashboard.g.cs
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberAccountDashboard.baml
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberborrowedBook.baml
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberDashboard.baml
+C:\Users\mohka\source\repos\Library\Library\bin\Debug\Library.mdf
+C:\Users\mohka\source\repos\Library\Library\bin\Debug\Library_log.ldf
+C:\Users\mohka\source\repos\Library\Library\bin\Debug\EntityFramework.dll
+C:\Users\mohka\source\repos\Library\Library\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mohka\source\repos\Library\Library\bin\Debug\EntityFramework.xml
+C:\Users\mohka\source\repos\Library\Library\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\Library_Content.g.cs
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\Library.csproj.CopyComplete
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\GeneratedInternalTypeHelper.g.cs
