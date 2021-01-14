@@ -36,7 +36,7 @@ namespace Library
 
                 con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                 con.Open();
-                cmd = new SqlCommand("INSERT INTO Books (BookName,CategoryTitle,Available,PublishedYear,Edition,AuthorName,ISBN,Language,RegisterDate) VALUES (@BookName,@CategoryTitle,@Available,@PublishedYear,@Edition,@AuthorName,@ISBN,@Language,@RegisterDate)", con);
+                cmd = new SqlCommand("INSERT INTO Books (BookName,CategoryTitle,Available,PublishedYear,Edition,AuthorName,ISBN,Language) VALUES (@BookName,@CategoryTitle,@Available,@PublishedYear,@Edition,@AuthorName,@ISBN,@Language)", con);
                 cmd.Parameters.Add("@BookName", BookNameTxtBx.Text);
                 cmd.Parameters.Add("@CategoryTitle", CategoryTxtBx.Text);
                 cmd.Parameters.Add("@Available", AvailableTxtBx.Text);
@@ -45,7 +45,7 @@ namespace Library
                 cmd.Parameters.Add("@AuthorName", AuthorTxtBx.Text);
                 cmd.Parameters.Add("@ISBN", ISBNTxtBx.Text);
                 cmd.Parameters.Add("@Language", LanguageTxtBx.Text);
-                cmd.Parameters.Add("@RegisterDate", DateTime.Now);
+                //cmd.Parameters.Add("@RegisterDate", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(
                            messageBoxText: $"Book «{BookNameTxtBx.Text}» successfully Added",

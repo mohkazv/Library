@@ -30,33 +30,67 @@ namespace Library
         [Obsolete]
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
         {
-            try
+           if(MainWindow.Librarian == true)
             {
+                try
+                {
 
-                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
-                con.Open();
-                cmd = new SqlCommand("INSERT INTO Admins (FirstName,LastName,Gender,Email,Username,PhoneNumber,Password,BirthDate,RegisterDate,Education) VALUES (@FirstName,@LastName,@Gender,@Email,@Username,@PhoneNumber,@Password,@BirthDate,@RegisterDate,@Education)", con);
-                cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
-                cmd.Parameters.Add("@LastName", LastNameTxtBx.Text);
-                cmd.Parameters.Add("@Gender", GenderCmBx.Text);
-                cmd.Parameters.Add("@Email", EmailTxtBx.Text);
-                cmd.Parameters.Add("@Username", UsernameTxtBx.Text);
-                cmd.Parameters.Add("@PhoneNumber", PhoneNumberTxtBx.Text);
-                cmd.Parameters.Add("@Password", PasswordTxtBx.Password);
-                cmd.Parameters.Add("@BirthDate", BirthDateDP.SelectedDate);
-                cmd.Parameters.Add("@RegisterDate", DateTime.Now);
-                cmd.Parameters.Add("@Education",EducationTxtBx.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show(
-                        messageBoxText: $"User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Added",
-                        caption: "Successful Adding",
-                        button: MessageBoxButton.OK,
-                        icon: MessageBoxImage.Information);
-                con.Close();
+                    con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                    con.Open();
+                    cmd = new SqlCommand("INSERT INTO Admins (FirstName,LastName,Gender,Email,Username,PhoneNumber,Password,BirthDate,RegisterDate,Education) VALUES (@FirstName,@LastName,@Gender,@Email,@Username,@PhoneNumber,@Password,@BirthDate,@RegisterDate,@Education)", con);
+                    cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
+                    cmd.Parameters.Add("@LastName", LastNameTxtBx.Text);
+                    cmd.Parameters.Add("@Gender", GenderCmBx.Text);
+                    cmd.Parameters.Add("@Email", EmailTxtBx.Text);
+                    cmd.Parameters.Add("@Username", UsernameTxtBx.Text);
+                    cmd.Parameters.Add("@PhoneNumber", PhoneNumberTxtBx.Text);
+                    cmd.Parameters.Add("@Password", PasswordTxtBx.Password);
+                    cmd.Parameters.Add("@BirthDate", BirthDateDP.SelectedDate);
+                    cmd.Parameters.Add("@RegisterDate", DateTime.Now);
+                    cmd.Parameters.Add("@Education", EducationTxtBx.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show(
+                            messageBoxText: $"Librarain «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Added",
+                            caption: "Successful Adding",
+                            button: MessageBoxButton.OK,
+                            icon: MessageBoxImage.Information);
+                    con.Close();
+                }
+                catch (Exception b)
+                {
+                    MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                }
             }
-            catch (Exception b)
+            else
             {
-                MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                try
+                {
+
+                    con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                    con.Open();
+                    cmd = new SqlCommand("INSERT INTO Users(FirstName,LastName,Gender,Email,Username,PhoneNumber,Password,BirthDate,RegisterDate,Education) VALUES (@FirstName,@LastName,@Gender,@Email,@Username,@PhoneNumber,@Password,@BirthDate,@RegisterDate,@Education)", con);
+                    cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
+                    cmd.Parameters.Add("@LastName", LastNameTxtBx.Text);
+                    cmd.Parameters.Add("@Gender", GenderCmBx.Text);
+                    cmd.Parameters.Add("@Email", EmailTxtBx.Text);
+                    cmd.Parameters.Add("@Username", UsernameTxtBx.Text);
+                    cmd.Parameters.Add("@PhoneNumber", PhoneNumberTxtBx.Text);
+                    cmd.Parameters.Add("@Password", PasswordTxtBx.Password);
+                    cmd.Parameters.Add("@BirthDate", BirthDateDP.SelectedDate);
+                    cmd.Parameters.Add("@RegisterDate", DateTime.Now);
+                    cmd.Parameters.Add("@Education", EducationTxtBx.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show(
+                            messageBoxText: $"User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Added",
+                            caption: "Successful Adding",
+                            button: MessageBoxButton.OK,
+                            icon: MessageBoxImage.Information);
+                    con.Close();
+                }
+                catch (Exception b)
+                {
+                    MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                }
             }
 
         }
