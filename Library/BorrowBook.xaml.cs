@@ -57,9 +57,9 @@ namespace Library
                            icon: MessageBoxImage.Information);
                 con.Close();
             }
-            catch (Exception b)
+            catch (Exception ex)
             {
-                MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                MessageBox.Show(ex.Message);
             }
         }
     }

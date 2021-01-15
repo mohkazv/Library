@@ -115,15 +115,15 @@ namespace Library
                 cmd.Parameters.Add("@RegisterDate", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(
-                        messageBoxText: $"User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Added",
-                        caption: "Successful Adding",
+                        messageBoxText: $"information of User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» Successfully Updated",
+                        caption: "Successful Update",
                         button: MessageBoxButton.OK,
                         icon: MessageBoxImage.Information);
                 con.Close();
             }
             catch (Exception b)
             {
-                MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                MessageBox.Show("Exception occur while Update table:" + b.Message + "\t" + b.GetType());
             }
         }
 
@@ -153,9 +153,9 @@ namespace Library
                 con.Close();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
     }
