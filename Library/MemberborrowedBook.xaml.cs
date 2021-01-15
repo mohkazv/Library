@@ -31,7 +31,8 @@ namespace Library
 
         private void ExtendDateBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new ExtendBorrowedBookDate().Show();
+            Close();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

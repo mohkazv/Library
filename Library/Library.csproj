@@ -97,6 +97,9 @@
     <Compile Include="EditMemberInformation.xaml.cs">
       <DependentUpon>EditMemberInformation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExtendBorrowedBookDate.xaml.cs">
+      <DependentUpon>ExtendBorrowedBookDate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LibrarianAccountDashboard.xaml.cs">
       <DependentUpon>LibrarianAccountDashboard.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,9 @@
     </Compile>
     <Compile Include="MemberLoginPage.xaml.cs">
       <DependentUpon>MemberLoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSearchBook.xaml.cs">
+      <DependentUpon>MemberSearchBook.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchEditBookInformation.xaml.cs">
       <DependentUpon>SearchEditBookInformation.xaml</DependentUpon>
@@ -154,6 +160,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditMemberInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExtendBorrowedBookDate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MemberLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MemberSearchBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

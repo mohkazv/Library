@@ -28,10 +28,7 @@ namespace Library
             InitializeComponent();
         }
 
-        private void SearchBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
 
         private void BorrowedBookBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -71,6 +68,12 @@ namespace Library
             {
 
             }
+        }
+
+        private void SearchBook1Btn(object sender, RoutedEventArgs e)
+        {
+            new MemberSearchBook().Show();
+            Close();
         }
     }
 }

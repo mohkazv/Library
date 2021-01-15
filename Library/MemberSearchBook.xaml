@@ -1,0 +1,16 @@
+﻿<Window x:Class="Library.MemberSearchBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="MemberSearchBook" Height="482.75" Width="654">
+    <Grid>
+        <DataGrid x:Name="MemberSearchBookDG" HorizontalAlignment="Left" Height="244" Margin="3,2,0,0" VerticalAlignment="Top" Width="644"/>
+        <Label Content="Search by Book Title or Author name or Subject name  :" HorizontalAlignment="Left" Margin="77,301,0,0" VerticalAlignment="Top" Width="429" FontSize="16" FontFamily="Ink Free" FontWeight="Bold"/>
+        <TextBox x:Name="SearchTxtBx" HorizontalAlignment="Left" Height="37" Margin="76,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="509" FontFamily="Ink Free" FontWeight="Bold" KeyUp="SearchTxtBx_KeyUp"/>
+        <Separator HorizontalAlignment="Left" Margin="55,261,0,0" VerticalAlignment="Top" Height="48" Width="539"/>
+
+    </Grid>
+</Window>

@@ -54,3 +54,7 @@ C:\Users\mohka\source\repos\Library\Library\bin\Debug\EntityFramework.SqlServer.
 C:\Users\mohka\source\repos\Library\Library\bin\Debug\EntityFramework.xml
 C:\Users\mohka\source\repos\Library\Library\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\Library.csproj.CopyComplete
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\ExtendBorrowedBookDate.g.cs
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\ExtendBorrowedBookDate.baml
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberSearchBook.g.cs
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberSearchBook.baml
