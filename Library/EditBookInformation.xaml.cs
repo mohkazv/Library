@@ -59,7 +59,7 @@ namespace Library
                 con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                 con.Open();
 
-                cmd = new SqlCommand("Delete From Books Where BookName=@BookName and CategoryTitle=@CategoryTitle and Avilable=@Available and PublishedYear=@PublishedYear and Edition=@Edition and AuthorName=@AuthorName and ISBN=@ISBN and Language=@Language ", con);
+                cmd = new SqlCommand("Delete From Books Where BookName=@BookName and CategoryTitle=@CategoryTitle and Available=@Available and PublishedYear=@PublishedYear and Edition=@Edition and AuthorName=@AuthorName and ISBN=@ISBN and Language=@Language ", con);
 
                 cmd.Parameters.AddWithValue("@BookName", BookNameTxtBx.Text);
                 cmd.Parameters.AddWithValue("@CategoryTitle", CategoryTxtBx.Text);
@@ -73,7 +73,7 @@ namespace Library
                 int deleted = cmd.ExecuteNonQuery();
                 MessageBox.Show(
                               messageBoxText: $"Book «{BookNameTxtBx.Text}» successfully Removed",
-                              caption: "Successful Removing",
+                              caption: "Successful Remove",
                               button: MessageBoxButton.OK,
                               icon: MessageBoxImage.Information);
 
@@ -96,7 +96,7 @@ namespace Library
 
                 con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                 con.Open();
-                cmd = new SqlCommand("Update Books Set BookName=@BookName and CategoryTitle=@CategoryTitle and Avilable=@Available and PublishedYear=@PublishedYear and Edition=@Edition and AuthorName=@AuthorName and ISBN=@ISBN and Language=@Language ", con);
+                cmd = new SqlCommand("Update Books Set BookName=@BookName , CategoryTitle=@CategoryTitle, Available=@Available , PublishedYear=@PublishedYear , Edition=@Edition , AuthorName=@AuthorName , ISBN=@ISBN , Language=@Language ", con);
                 cmd.Parameters.Add("@BookName", BookNameTxtBx.Text);
                 cmd.Parameters.Add("@CategoryTitle", CategoryTxtBx.Text);
                 cmd.Parameters.Add("@Available", AvailableTxtBx.Text);
@@ -105,18 +105,17 @@ namespace Library
                 cmd.Parameters.Add("@AuthorName", AuthorTxtBx.Text);
                 cmd.Parameters.Add("@ISBN", ISBNTxtBx.Text);
                 cmd.Parameters.Add("@Language", LanguageTxtBx.Text);
-                cmd.Parameters.Add("@RegisterDate", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(
-                           messageBoxText: $"Book «{BookNameTxtBx.Text}» successfully Added",
-                           caption: "Successful Adding",
+                           messageBoxText: $"Information of the Book «{BookNameTxtBx.Text}» Successfully Updated",
+                           caption: "Successful Update",
                            button: MessageBoxButton.OK,
                            icon: MessageBoxImage.Information);
                 con.Close();
             }
             catch (Exception b)
             {
-                MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                MessageBox.Show("Exception occur :" + b.Message + "\t" + b.GetType());
             }
 
         }
@@ -134,7 +133,7 @@ namespace Library
             {
                 con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                 con.Open();
-                cmd = new SqlCommand("Select * From Books where Id ='" + SearchEditBookInformation.SetValueForBookId + "'", con);
+                cmd = new SqlCommand("Select BookName,CategoryTitle,Available,PublishedYear,Edition,AuthorName,ISBN,Language From Books where Id ='" + SearchEditBookInformation.SetValueForBookId + "'", con);
 
 
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -147,6 +146,7 @@ namespace Library
                     EditionTxtBx.Text = dr.GetValue(4).ToString();
                     AuthorTxtBx.Text = dr.GetValue(5).ToString();
                     ISBNTxtBx.Text = dr.GetValue(6).ToString();
+                    LanguageTxtBx.Text = dr.GetValue(7).ToString();
 
                 }
                 con.Close();

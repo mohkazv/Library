@@ -20,42 +20,42 @@ namespace Library
     /// </summary>
     public partial class MemberSearchBook : Window
     {
-        
+        readonly string cs = @"Data Source =.; Initial Catalog = Library; Integrated Security = True";
+        SqlConnection con;
+        SqlDataAdapter adapt;
+        DataTable dt;
+
         public MemberSearchBook()
         {
             InitializeComponent();
         }
-      
 
-        private void SearchTxtBx_KeyUp(object sender, KeyEventArgs e)
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            try { 
-            string query = "SELECT BookName, CategoryTitle, AuthorName From Books";
-            query += " WHERE BookName LIKE '%' + @BookName+ '%'";
-            query += " OR @BookName = ''";
-            string constr = @"Data Source=.;Initial Catalog=Library;Integrated Security=True";
-                using (SqlConnection con = new SqlConnection(constr))
-                {
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        cmd.Parameters.AddWithValue("@BookName", SearchTxtBx.Text.Trim());
-                        using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                        {
-                            DataTable dt = new DataTable();
-                            sda.Fill(dt);
+            new MemberDashboard().Show();
+            Close();
+        }
 
-                            this.MemberSearchBookDG.ItemsSource = dt.DefaultView;
-                        }
+        private void MemberSearchBook1_Loaded(object sender, RoutedEventArgs e)
+        {
+            con = new SqlConnection(cs);
+            con.Open();
+            adapt = new SqlDataAdapter("select BookName,CategoryTitle,AuthorName from Books", con);
+            dt = new DataTable();
+            adapt.Fill(dt);
+            MemberSearchBookDG.ItemsSource = dt.DefaultView;
+            con.Close();
+        }
 
-                    } 
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Exception occur :" + ex.Message + "\t" + ex.GetType());
-            }
-
+        private void SearchTxtBx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            con = new SqlConnection(cs);
+            con.Open();
+            adapt = new SqlDataAdapter("select BookName,CategoryTitle,AuthorName  from Books where BookName like '" + SearchTxtBx.Text + "%'", con);
+            dt = new DataTable();
+            adapt.Fill(dt);
+            MemberSearchBookDG.ItemsSource = dt.DefaultView;
+            con.Close();
         }
     }
 }

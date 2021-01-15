@@ -88,6 +88,9 @@
     <Compile Include="BookDashboard.xaml.cs">
       <DependentUpon>BookDashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BorrowBackBook.xaml.cs">
+      <DependentUpon>BorrowBackBook.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BorrowBook.xaml.cs">
       <DependentUpon>BorrowBook.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BookDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BorrowBackBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

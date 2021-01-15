@@ -58,3 +58,5 @@ C:\Users\mohka\source\repos\Library\Library\obj\Debug\ExtendBorrowedBookDate.g.c
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\ExtendBorrowedBookDate.baml
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberSearchBook.g.cs
 C:\Users\mohka\source\repos\Library\Library\obj\Debug\MemberSearchBook.baml
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\BorrowBackBook.g.cs
+C:\Users\mohka\source\repos\Library\Library\obj\Debug\BorrowBackBook.baml

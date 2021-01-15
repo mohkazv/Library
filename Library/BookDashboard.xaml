@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="BookDashboard" Height="272.027" Width="541.23">
-    <Grid Margin="0,0,-5.667,-8.373">
-        <Button x:Name="AddNewBookBtn" Content="Add New Book" HorizontalAlignment="Left" Margin="70,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="AddNewBookBtn_Click"/>
+        Title="BookDashboard" Height="272.027" Width="685.368">
+    <Grid Margin="0,0,-0.333,-1.333">
+        <Button x:Name="AddNewBookBtn" Content="Add &#xD;&#xA;New Book" HorizontalAlignment="Left" Margin="70,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="AddNewBookBtn_Click"/>
         <Button x:Name="EditBookInformationBtn" Content="Edit Book&#xA; Information" HorizontalAlignment="Left" Margin="220,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="EditBookInformationBtn_Click"/>
-        <Button x:Name="BorrowBookBtn" Content="Borrow Book" HorizontalAlignment="Left" Margin="370,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="BorrowBookBtn_Click"/>
-        <Separator HorizontalAlignment="Left" Margin="51,161,0,0" VerticalAlignment="Top" Height="20" Width="442" FontFamily="Ink Free" FontWeight="Bold"/>
-        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="214,193,0,0" VerticalAlignment="Top" Width="87" Height="24" FontFamily="Ink Free" FontWeight="Bold" Click="BackBtn_Click"/>
+        <Button x:Name="BorrowBookBtn" Content="Borrow &#xD;&#xA;Book" HorizontalAlignment="Left" Margin="370,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="BorrowBookBtn_Click"/>
+        <Separator HorizontalAlignment="Left" Margin="51,161,0,0" VerticalAlignment="Top" Height="20" Width="583" FontFamily="Ink Free" FontWeight="Bold"/>
+        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="312,194,0,0" VerticalAlignment="Top" Width="87" Height="24" FontFamily="Ink Free" FontWeight="Bold" Click="BackBtn_Click"/>
+        <Button x:Name="BorrowBackBook" Content="Borrow Back &#xD;&#xA;Book" HorizontalAlignment="Left" Margin="520,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="BorrowBackBookBtn_Click"/>
 
     </Grid>
 </Window>

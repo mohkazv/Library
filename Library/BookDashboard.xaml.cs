@@ -32,7 +32,7 @@ namespace Library
 
         private void EditBookInformationBtn_Click(object sender, RoutedEventArgs e)
         {
-            new EditBookInformation().Show();
+            new SearchEditBookInformation().Show();
             Close();
         }
 
@@ -47,6 +47,12 @@ namespace Library
             new LibrarianDashboard().Show();
             Close();
 
+        }
+
+        private void BorrowBackBookBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new BorrowBackBook().Show();
+            Close();
         }
     }
 }
