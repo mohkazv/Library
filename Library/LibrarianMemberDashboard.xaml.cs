@@ -26,7 +26,7 @@ namespace Library
 
         private void EditMembershipInformationBtn_Click(object sender, RoutedEventArgs e)
         {
-            new SearchEditBookInformation().Show();
+            new SearchEditMemberInformation().Show();
             Close();
         }
 

@@ -103,7 +103,7 @@ namespace Library
 
                 con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                 con.Open();
-                cmd = new SqlCommand("Update Users Set FirstName=@FirstName and LastName=@LastName and Gender=@Gender and Email=@Email and Username=@Username and PhoneNumber=@PhoneNumber and Password=@Password and Education=@Education and BirthDate=@BirthDate ", con);
+                cmd = new SqlCommand("Update Users Set FirstName=@FirstName , LastName=@LastName , Gender=@Gender , Email=@Email , Username=@Username , PhoneNumber=@PhoneNumber , Password=@Password , Education=@Education , BirthDate=@BirthDate ", con);
                 cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
                 cmd.Parameters.Add("@LastName", LastNameTxtBx.Text);
                 cmd.Parameters.Add("@Gender", GenderCmBx.Text);
@@ -111,8 +111,9 @@ namespace Library
                 cmd.Parameters.Add("@Username", UsernameTxtBx.Text);
                 cmd.Parameters.Add("@PhoneNumber", PhoneNumberTxtBx.Text);
                 cmd.Parameters.Add("@Password", PasswordTxtBx.Password);
+                cmd.Parameters.Add("@Education", EducationTxtBx.Text);
                 cmd.Parameters.Add("@BirthDate", BirthDateDP.SelectedDate);
-                cmd.Parameters.Add("@RegisterDate", DateTime.Now);
+              
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(
                         messageBoxText: $"information of User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» Successfully Updated",
@@ -133,7 +134,7 @@ namespace Library
             {
                 con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                 con.Open();
-                cmd = new SqlCommand("Select * from Users where Id ='" + SearchEditMemberInformation.SetValueForUserId + "'", con);
+                cmd = new SqlCommand("Select FirstName,LastName,Gender,Email,Username,Education,PhoneNumber,BirthDate,Password from Users where Id ='" + SearchEditMemberInformation.SetValueForUserId + "'", con);
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -145,7 +146,7 @@ namespace Library
                     UsernameTxtBx.Text = dr.GetValue(4).ToString();
                     EducationTxtBx.Text = dr.GetValue(5).ToString();
                     PhoneNumberTxtBx.Text = dr.GetValue(6).ToString();
-                    BirthDateDP.DisplayDate = (DateTime)dr.GetValue(7);
+                    BirthDateDP.SelectedDate = (DateTime)dr.GetValue(7);
                     PasswordTxtBx.Password = dr.GetValue(8).ToString();
 
 
