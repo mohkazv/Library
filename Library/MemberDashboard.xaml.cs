@@ -64,9 +64,9 @@ namespace Library
                 con.Close();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show("Exception occur :" + ex.Message + "\t" + ex.GetType());
             }
         }
 

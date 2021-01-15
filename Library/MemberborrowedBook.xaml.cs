@@ -42,20 +42,26 @@ namespace Library
         }
        
         private void MemberBorrowedBook1_Loaded(object sender, RoutedEventArgs e)
-        {
-            string userId = MemberDashboard.SetValueForUserId;
-
-            using (SqlConnection sqlConn = new SqlConnection())
+        {  try
             {
-                sqlConn.ConnectionString = "Data Source =.; Initial Catalog = Library; Integrated Security = True";
-                string queryString = "select ReturnDate,DeadlineDate,BookName from BorrowedBooks Inner join Books on BorrowedBooks.BookId = Books.Id  where UserId = '"+ userId  + "'";
-                sqlConn.Open();
+                string userId = MemberDashboard.SetValueForUserId;
 
-                DataTable table = new DataTable();
-                SqlDataAdapter a = new SqlDataAdapter(queryString, sqlConn);
-                a.Fill(table);
+                using (SqlConnection sqlConn = new SqlConnection())
+                {
+                    sqlConn.ConnectionString = "Data Source =.; Initial Catalog = Library; Integrated Security = True";
+                    string queryString = "select ReturnDate,DeadlineDate,BookName from BorrowedBooks Inner join Books on BorrowedBooks.BookId = Books.Id  where UserId = '" + userId + "'";
+                    sqlConn.Open();
 
-                this.MemberBorrowedBookDG.ItemsSource = table.DefaultView;
+                    DataTable table = new DataTable();
+                    SqlDataAdapter a = new SqlDataAdapter(queryString, sqlConn);
+                    a.Fill(table);
+
+                    this.MemberBorrowedBookDG.ItemsSource = table.DefaultView;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Exception occur :" + ex.Message + "\t" + ex.GetType());
             }
 
         }

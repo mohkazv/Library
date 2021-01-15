@@ -29,26 +29,33 @@ namespace Library
 
         private void SearchTxtBx_KeyUp(object sender, KeyEventArgs e)
         {
+            try { 
             string query = "SELECT BookName, CategoryTitle, AuthorName From Books";
             query += " WHERE BookName LIKE '%' + @BookName+ '%'";
             query += " OR @BookName = ''";
             string constr = @"Data Source=.;Initial Catalog=Library;Integrated Security=True";
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlConnection con = new SqlConnection(constr))
                 {
-                    cmd.Parameters.AddWithValue("@BookName", SearchTxtBx.Text.Trim());
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        DataTable dt = new DataTable();
-                        sda.Fill(dt);
-                       
-                        this.MemberSearchBookDG.ItemsSource = dt.DefaultView ;
-                    }
-                   
+                        cmd.Parameters.AddWithValue("@BookName", SearchTxtBx.Text.Trim());
+                        using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            sda.Fill(dt);
+
+                            this.MemberSearchBookDG.ItemsSource = dt.DefaultView;
+                        }
+
+                    } 
                 }
+
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception occur :" + ex.Message + "\t" + ex.GetType());
+            }
+
         }
     }
 }
