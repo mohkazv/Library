@@ -89,7 +89,7 @@ namespace Library
                 }
                 catch (Exception b)
                 {
-                    MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                    MessageBox.Show("Exception occur :" + b.Message + "\t" + b.GetType());
                 }
             }
 

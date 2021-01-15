@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
         Title="SearchEditMemberInformation" Height="150" Width="490">
-    <Grid Margin="0,0,-1.667,-9.373">
+    <Grid Margin="0,0,-1.667,3.667">
         <Label Content="User Id :" HorizontalAlignment="Left" Margin="64,23,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="UserIdTxtBx" HorizontalAlignment="Left" Margin="129,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" FontFamily="Ink Free" FontWeight="Bold"/>
         <Button x:Name="SearchBtn" Content="Search" HorizontalAlignment="Left" Margin="160,82,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Width="55" Click="SearchBtn_Click"/>

@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="EditMemberInformation" Height="325.277" Width="700" Loaded="EditMemberInformatin1_Loaded">
-    <Grid Margin="-3,3,-18.667,-11.373">
+        Title="EditMemberInformation" Height="325.277" Width="672.053" Loaded="EditMemberInformatin1_Loaded">
+    <Grid Margin="-3,3,-0.667,-11" HorizontalAlignment="Left" Width="669">
         <Label Content="First Name :" HorizontalAlignment="Left" Margin="25,14,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="FirstNameTxtBx" HorizontalAlignment="Left" Margin="102,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Ink Free" FontWeight="Bold"/>
         <Label Content="LastName :" HorizontalAlignment="Left" Margin="254,14,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold"/>
         <TextBox x:Name="LastNameTxtBx" HorizontalAlignment="Left" Margin="325,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Ink Free" FontWeight="Bold"/>
-        <ComboBox x:Name="GenderCmBx" Width="120" Height="20" Margin="498,16,97,0" VerticalAlignment="Top" Text="Gender" FontFamily="Ink Free" FontWeight="Bold" IsEditable="true"  IsReadOnly="true" 
+        <ComboBox x:Name="GenderCmBx" Height="20" Margin="532,16,55,0" VerticalAlignment="Top" Text="Gender" FontFamily="Ink Free" FontWeight="Bold" IsEditable="true"  IsReadOnly="true" 
             IsDropDownOpen="False" StaysOpenOnEdit="True" >
             <ComboBoxItem Content="Male" HorizontalAlignment="Left" Width="117.333333333333"/>
             <ComboBoxItem Content="Female" HorizontalAlignment="Left" Width="117.333333333333"/>
