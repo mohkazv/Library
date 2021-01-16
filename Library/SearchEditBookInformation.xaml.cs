@@ -28,9 +28,21 @@ namespace Library
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetValueForBookId = int.Parse(BookIdTxtBx.Text);
-            new EditBookInformation().Show();
-            Close();
+            string BookId = BookIdTxtBx.Text;
+
+
+            if (string.IsNullOrEmpty(BookId))
+            {
+                MessageBox.Show("Please enter valid Values");
+                BookIdTxtBx.Focus();
+            }
+
+            else
+            {
+                SetValueForBookId = int.Parse(BookIdTxtBx.Text);
+                new EditBookInformation().Show();
+                Close();
+            }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

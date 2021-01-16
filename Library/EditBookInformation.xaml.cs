@@ -93,25 +93,48 @@ namespace Library
         {
             try
             {
+                string BookName = BookNameTxtBx.Text;
+                string Category = CategoryTxtBx.Text;
+                string Available = AvailableTxtBx.Text;
+                string Edition = EditionTxtBx.Text;
+                string PublishedYear = PublishYearTxtBx.Text;
+                string AuthorName = AuthorTxtBx.Text;
+                string ISBN = ISBNTxtBx.Text;
 
-                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
-                con.Open();
-                cmd = new SqlCommand("Update Books Set BookName=@BookName , CategoryTitle=@CategoryTitle, Available=@Available , PublishedYear=@PublishedYear , Edition=@Edition , AuthorName=@AuthorName , ISBN=@ISBN , Language=@Language ", con);
-                cmd.Parameters.Add("@BookName", BookNameTxtBx.Text);
-                cmd.Parameters.Add("@CategoryTitle", CategoryTxtBx.Text);
-                cmd.Parameters.Add("@Available", AvailableTxtBx.Text);
-                cmd.Parameters.Add("@PublishedYear", PublishYearTxtBx.Text);
-                cmd.Parameters.Add("@Edition", EditionTxtBx.Text);
-                cmd.Parameters.Add("@AuthorName", AuthorTxtBx.Text);
-                cmd.Parameters.Add("@ISBN", ISBNTxtBx.Text);
-                cmd.Parameters.Add("@Language", LanguageTxtBx.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show(
-                           messageBoxText: $"Information of the Book «{BookNameTxtBx.Text}» Successfully Updated",
-                           caption: "Successful Update",
-                           button: MessageBoxButton.OK,
-                           icon: MessageBoxImage.Information);
-                con.Close();
+                if (string.IsNullOrEmpty(BookName) && string.IsNullOrEmpty(Category) && string.IsNullOrEmpty(Available) && string.IsNullOrEmpty(Edition) && string.IsNullOrEmpty(PublishedYear) && string.IsNullOrEmpty(AuthorName) && string.IsNullOrEmpty(ISBN))
+                {
+                    MessageBox.Show("Please enter valid Values");
+                    BookNameTxtBx.Focus();
+                    CategoryTxtBx.Focus();
+                    AvailableTxtBx.Focus();
+                    EditionTxtBx.Focus();
+                    PublishYearTxtBx.Focus();
+                    AuthorTxtBx.Focus();
+                    ISBNTxtBx.Focus();
+
+
+                }
+                else
+                {
+                    con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                    con.Open();
+                    cmd = new SqlCommand("Update Books Set BookName=@BookName , CategoryTitle=@CategoryTitle, Available=@Available , PublishedYear=@PublishedYear , Edition=@Edition , AuthorName=@AuthorName , ISBN=@ISBN , Language=@Language ", con);
+                    cmd.Parameters.Add("@BookName", BookNameTxtBx.Text);
+                    cmd.Parameters.Add("@CategoryTitle", CategoryTxtBx.Text);
+                    cmd.Parameters.Add("@Available", AvailableTxtBx.Text);
+                    cmd.Parameters.Add("@PublishedYear", PublishYearTxtBx.Text);
+                    cmd.Parameters.Add("@Edition", EditionTxtBx.Text);
+                    cmd.Parameters.Add("@AuthorName", AuthorTxtBx.Text);
+                    cmd.Parameters.Add("@ISBN", ISBNTxtBx.Text);
+                    cmd.Parameters.Add("@Language", LanguageTxtBx.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show(
+                               messageBoxText: $"Information of the Book «{BookNameTxtBx.Text}» Successfully Updated",
+                               caption: "Successful Update",
+                               button: MessageBoxButton.OK,
+                               icon: MessageBoxImage.Information);
+                    con.Close();
+                }
             }
             catch (Exception b)
             {

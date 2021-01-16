@@ -100,27 +100,53 @@ namespace Library
         {
             try
             {
+                string FirstName = FirstNameTxtBx.Text;
+                string LastName = LastNameTxtBx.Text;
+                string Gender = GenderCmBx.Text;
+                string Email = EmailTxtBx.Text;
+                string Username = UsernameTxtBx.Text;
+                string PhoneNumber = PhoneNumberTxtBx.Text;
+                string Password = PasswordTxtBx.Password;
+                string Education = EducationTxtBx.Text;
+                string BirthDate = BirthDateDP.Text;
 
-                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
-                con.Open();
-                cmd = new SqlCommand("Update Users Set FirstName=@FirstName , LastName=@LastName , Gender=@Gender , Email=@Email , Username=@Username , PhoneNumber=@PhoneNumber , Password=@Password , Education=@Education , BirthDate=@BirthDate ", con);
-                cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
-                cmd.Parameters.Add("@LastName", LastNameTxtBx.Text);
-                cmd.Parameters.Add("@Gender", GenderCmBx.Text);
-                cmd.Parameters.Add("@Email", EmailTxtBx.Text);
-                cmd.Parameters.Add("@Username", UsernameTxtBx.Text);
-                cmd.Parameters.Add("@PhoneNumber", PhoneNumberTxtBx.Text);
-                cmd.Parameters.Add("@Password", PasswordTxtBx.Password);
-                cmd.Parameters.Add("@Education", EducationTxtBx.Text);
-                cmd.Parameters.Add("@BirthDate", BirthDateDP.SelectedDate);
-              
-                cmd.ExecuteNonQuery();
-                MessageBox.Show(
-                        messageBoxText: $"information of User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» Successfully Updated",
-                        caption: "Successful Update",
-                        button: MessageBoxButton.OK,
-                        icon: MessageBoxImage.Information);
-                con.Close();
+                if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Gender) && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate))
+                {
+                    MessageBox.Show("Please enter valid Values");
+                    FirstNameTxtBx.Focus();
+                    LastNameTxtBx.Focus();
+                    GenderCmBx.Focus();
+                    EmailTxtBx.Focus();
+                    UsernameTxtBx.Focus();
+                    PhoneNumberTxtBx.Focus();
+                    PasswordTxtBx.Focus();
+                    EducationTxtBx.Focus();
+                    BirthDateDP.Focus();
+
+                }
+                else
+                {
+                    con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                    con.Open();
+                    cmd = new SqlCommand("Update Users Set FirstName=@FirstName , LastName=@LastName , Gender=@Gender , Email=@Email , Username=@Username , PhoneNumber=@PhoneNumber , Password=@Password , Education=@Education , BirthDate=@BirthDate ", con);
+                    cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
+                    cmd.Parameters.Add("@LastName", LastNameTxtBx.Text);
+                    cmd.Parameters.Add("@Gender", GenderCmBx.Text);
+                    cmd.Parameters.Add("@Email", EmailTxtBx.Text);
+                    cmd.Parameters.Add("@Username", UsernameTxtBx.Text);
+                    cmd.Parameters.Add("@PhoneNumber", PhoneNumberTxtBx.Text);
+                    cmd.Parameters.Add("@Password", PasswordTxtBx.Password);
+                    cmd.Parameters.Add("@Education", EducationTxtBx.Text);
+                    cmd.Parameters.Add("@BirthDate", BirthDateDP.SelectedDate);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show(
+                            messageBoxText: $"information of User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» Successfully Updated",
+                            caption: "Successful Update",
+                            button: MessageBoxButton.OK,
+                            icon: MessageBoxImage.Information);
+                    con.Close();
+                }
             }
             catch (Exception b)
             {

@@ -33,22 +33,31 @@ namespace Library
             try
             {
 
-                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
-                con.Open();
-                cmd = new SqlCommand("Update BorrowedBooks Set ReturnDate=@ReturnDate, DeadlineDate=@DeadLineDate Where UserId ='"+MemberDashboard.SetValueForUserId  +"'", con);
-                cmd.Parameters.Add("@ReturnDate", ReturnDateDP.SelectedDate);
-                cmd.Parameters.Add("@DeadLineDate", DeadlineDP.SelectedDate);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show(
-                           messageBoxText: $"Book «{BookNameTxtBx.Text}» successfully Added",
-                           caption: "Successful Adding",
-                           button: MessageBoxButton.OK,
-                           icon: MessageBoxImage.Information);
-                con.Close();
+                if (ReturnDateDP.SelectedDate == null && DeadlineDP.SelectedDate == null)
+                {
+                    MessageBox.Show("Please enter valid Values");
+                   ReturnDateDP.Focus();
+                    DeadlineDP.Focus();
+
+                }
+                else {
+                    con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                    con.Open();
+                    cmd = new SqlCommand("Update BorrowedBooks Set ReturnDate=@ReturnDate, DeadlineDate=@DeadLineDate Where UserId ='" + MemberDashboard.SetValueForUserId + "'", con);
+                    cmd.Parameters.Add("@ReturnDate", ReturnDateDP.SelectedDate);
+                    cmd.Parameters.Add("@DeadLineDate", DeadlineDP.SelectedDate);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show(
+                               messageBoxText: $"the Book Return Date  Successfully Extended",
+                               caption: "Successful",
+                               button: MessageBoxButton.OK,
+                               icon: MessageBoxImage.Information);
+                    con.Close();
+                } 
             }
             catch (Exception b)
             {
-                MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                MessageBox.Show("Exception occur :" + b.Message + "\t" + b.GetType());
             }
         }
 

@@ -27,9 +27,25 @@ namespace Library
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetValueForUserId = int.Parse(UserIdTxtBx.Text);
-            new EditMemberInformation().Show();
-            Close();
+            string UserId = UserIdTxtBx.Text;
+            
+
+            if (string.IsNullOrEmpty(UserId) )
+            {
+                MessageBox.Show("Please enter valid Values");
+                UserIdTxtBx.Focus();
+                
+
+            }
+            else
+            {
+
+                SetValueForUserId = int.Parse(UserIdTxtBx.Text);
+                new EditMemberInformation().Show();
+                Close();
+                    
+                    
+            }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
