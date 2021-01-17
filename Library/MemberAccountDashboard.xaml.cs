@@ -22,7 +22,7 @@ namespace Library
     public partial class MemberAccountDashboard : Window
     {
         SqlCommand cmd;
-        SqlConnection con;
+        SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
         public MemberAccountDashboard()
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace Library
                 string Education = EducationTxtBx.Text;
                 string BirthDate = BirthDateDP.Text;
 
-                if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Gender) && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate))
+                if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) &&  string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate) && GenderCmBx.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please enter valid Values");
                     FirstNameTxtBx.Focus();
@@ -60,7 +60,7 @@ namespace Library
                 }
                 else
                 {
-                    con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                   
                     con.Open();
                     cmd = new SqlCommand("Update Users Set FirstName=@FirstName, LastName=@LastName, Gender=@Gender, Email=@Email, Username=@Username, PhoneNumber=@PhoneNumber, Password=@Password, Education=@Education, BirthDate=@BirthDate ", con);
                     cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
@@ -100,7 +100,6 @@ namespace Library
 
             try
             {
-                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                 con.Open();
                 cmd = new SqlCommand("Select FirstName,LastName,Gender,Email,Username,Education,PhoneNumber,BirthDate,Password from Users where Id ='" + MemberDashboard.SetValueForUserId + "'", con);
 

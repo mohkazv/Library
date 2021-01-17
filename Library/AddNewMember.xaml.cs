@@ -31,19 +31,20 @@ namespace Library
         [Obsolete]
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-                try
-                {
-                    string FirstName = FirstNameTxtBx.Text;
-                    string LastName = LastNameTxtBx.Text;
-                    string Gender = GenderCmBx.Text;
-                    string Email = EmailTxtBx.Text;
-                    string Username = UsernameTxtBx.Text;
-                    string PhoneNumber = PhoneNumberTxtBx.Text;
-                    string Password = PasswordTxtBx.Password;
-                    string Education = EducationTxtBx.Text;
-                    string BirthDate = BirthDateDP.Text;
+            string FirstName = FirstNameTxtBx.Text;
+            string LastName = LastNameTxtBx.Text;
+            string Gender = GenderCmBx.Text;
+            string Email = EmailTxtBx.Text;
+            string Username = UsernameTxtBx.Text;
+            string PhoneNumber = PhoneNumberTxtBx.Text;
+            string Password = PasswordTxtBx.Password;
+            string Education = EducationTxtBx.Text;
+            string BirthDate = BirthDateDP.Text;
 
-                    if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Gender) && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate))
+            try
+                {
+
+                    if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName)  && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate) && GenderCmBx.SelectedIndex == -1)
                     {
                         MessageBox.Show("Please enter valid Values");
                         FirstNameTxtBx.Focus();

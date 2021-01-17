@@ -22,7 +22,7 @@ namespace Library
     public partial class EditMemberInformation : Window
     {
         SqlCommand cmd;
-        SqlConnection con;
+        SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
         public EditMemberInformation()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace Library
                 string Education = EducationTxtBx.Text;
                 string BirthDate = BirthDateDP.Text;
 
-                if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Gender) && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate))
+                if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate) && GenderCmBx.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please enter valid Values");
                     FirstNameTxtBx.Focus();
@@ -59,9 +59,8 @@ namespace Library
 
                 else
                 {
-                    con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
+                   
                     con.Open();
-
                     cmd = new SqlCommand("Delete From Users Where FirstName=@FirstName and LastName=@LastName and Gender=@Gender and Email=@Email and Username=@Username and PhoneNumber=@PhoneNumber and Password=@Password and Education=@Education and BirthDate=@BirthDate", con);
 
                     cmd.Parameters.AddWithValue("@FirstName", FirstNameTxtBx.Text);
@@ -98,19 +97,19 @@ namespace Library
         [Obsolete]
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
+            string FirstName = FirstNameTxtBx.Text;
+            string LastName = LastNameTxtBx.Text;
+            string Gender = GenderCmBx.Text;
+            string Email = EmailTxtBx.Text;
+            string Username = UsernameTxtBx.Text;
+            string PhoneNumber = PhoneNumberTxtBx.Text;
+            string Password = PasswordTxtBx.Password;
+            string Education = EducationTxtBx.Text;
+            string BirthDate = BirthDateDP.Text;
+
             try
             {
-                string FirstName = FirstNameTxtBx.Text;
-                string LastName = LastNameTxtBx.Text;
-                string Gender = GenderCmBx.Text;
-                string Email = EmailTxtBx.Text;
-                string Username = UsernameTxtBx.Text;
-                string PhoneNumber = PhoneNumberTxtBx.Text;
-                string Password = PasswordTxtBx.Password;
-                string Education = EducationTxtBx.Text;
-                string BirthDate = BirthDateDP.Text;
-
-                if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Gender) && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate))
+                if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName)  && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate) && GenderCmBx.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please enter valid Values");
                     FirstNameTxtBx.Focus();
@@ -126,7 +125,6 @@ namespace Library
                 }
                 else
                 {
-                    con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                     con.Open();
                     cmd = new SqlCommand("Update Users Set FirstName=@FirstName , LastName=@LastName , Gender=@Gender , Email=@Email , Username=@Username , PhoneNumber=@PhoneNumber , Password=@Password , Education=@Education , BirthDate=@BirthDate ", con);
                     cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
@@ -158,7 +156,7 @@ namespace Library
         {
             try
             {
-                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
+                
                 con.Open();
                 cmd = new SqlCommand("Select FirstName,LastName,Gender,Email,Username,Education,PhoneNumber,BirthDate,Password from Users where Id ='" + SearchEditMemberInformation.SetValueForUserId + "'", con);
 
