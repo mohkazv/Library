@@ -32,7 +32,7 @@ namespace Library
 
         private void AddNewMemberBtn_Click(object sender, RoutedEventArgs e)
         {
-            new AddNewBook().Show();
+            new AddNewMember().Show();
             Close();
         }
 

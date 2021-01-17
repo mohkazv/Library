@@ -70,7 +70,8 @@ namespace Library
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new BookDashboard().Show();
+            Close();
         }
     }
 }

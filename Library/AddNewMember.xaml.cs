@@ -60,7 +60,7 @@ namespace Library
                     else {
                         con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                         con.Open();
-                        cmd = new SqlCommand("INSERT INTO Users (FirstName,LastName,Gender,Email,Username,PhoneNumber,Password,BirthDate,RegisterDate) VALUES (@FirstName,@LastName,@Gender,@Email,@Username,@PhoneNumber,@Password,@BirthDate,@RegisterDate)", con);
+                        cmd = new SqlCommand("INSERT INTO Users (FirstName,LastName,Gender,Email,Username,PhoneNumber,Password,BirthDate,Education,RegisterDate) VALUES (@FirstName,@LastName,@Gender,@Email,@Username,@PhoneNumber,@Password,@BirthDate,@Education,@RegisterDate)", con);
                         cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
                         cmd.Parameters.Add("@LastName", LastNameTxtBx.Text);
                         cmd.Parameters.Add("@Gender", GenderCmBx.Text);
@@ -69,10 +69,11 @@ namespace Library
                         cmd.Parameters.Add("@PhoneNumber", PhoneNumberTxtBx.Text);
                         cmd.Parameters.Add("@Password", PasswordTxtBx.Password);
                         cmd.Parameters.Add("@BirthDate", BirthDateDP.SelectedDate);
-                        cmd.Parameters.Add("@RegisterDate", DateTime.Now);
+                       cmd.Parameters.Add("@Education", EducationTxtBx.Text);
+                       cmd.Parameters.Add("@RegisterDate", DateTime.Now);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show(
-                                messageBoxText: $"Admin «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Added",
+                                messageBoxText: $"Member «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Added",
                                 caption: "Successful Adding",
                                 button: MessageBoxButton.OK,
                                 icon: MessageBoxImage.Information);
@@ -82,13 +83,13 @@ namespace Library
            
             catch (Exception b)
             {
-                MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                MessageBox.Show("Exception occur :" + b.Message + "\t" + b.GetType());
             }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            new LibrarianDashboard().Show();
+            new LibrarianMemberDashboard().Show();
             Close();
         }
     }

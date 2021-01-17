@@ -75,11 +75,14 @@ namespace Library
                         cmd.Parameters.Add("@Education", EducationTxtBx.Text);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show(
-                                messageBoxText: $"Librarain «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Added",
+                                messageBoxText: $"Librarain «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Added.",
                                 caption: "Successful Adding",
                                 button: MessageBoxButton.OK,
                                 icon: MessageBoxImage.Information);
                         con.Close();
+                        new LibrarianLoginPage().Show();
+                        Close();
+
                     }
                 }
                 catch (Exception b)
