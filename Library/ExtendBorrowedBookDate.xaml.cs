@@ -21,7 +21,7 @@ namespace Library
     public partial class ExtendBorrowedBookDate : Window
     {
         SqlCommand cmd;
-        SqlConnection con;
+        readonly SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
         public ExtendBorrowedBookDate()
         {
             InitializeComponent();
@@ -35,13 +35,17 @@ namespace Library
 
                 if (ReturnDateDP.SelectedDate == null && DeadlineDP.SelectedDate == null)
                 {
-                    MessageBox.Show("Please enter valid Values");
+                    MessageBox.Show(
+                           messageBoxText: "Please enter valid Values.",
+                           caption: "Error",
+                           button: MessageBoxButton.OK,
+                           MessageBoxImage.Error);
                     ReturnDateDP.Focus();
                     DeadlineDP.Focus();
 
                 }
                 else {
-                    con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                    
                     con.Open();
                     cmd = new SqlCommand("Update BorrowedBooks Set ReturnDate=@ReturnDate, DeadlineDate=@DeadLineDate Where UserId ='" + MemberDashboard.SetValueForUserId + "'", con);
                     cmd.Parameters.Add("@ReturnDate", ReturnDateDP.SelectedDate);
@@ -57,7 +61,11 @@ namespace Library
             }
             catch (Exception b)
             {
-                MessageBox.Show("Exception occur :" + b.Message + "\t" + b.GetType());
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
         }
 

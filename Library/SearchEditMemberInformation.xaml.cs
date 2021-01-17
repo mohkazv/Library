@@ -20,7 +20,7 @@ namespace Library
     /// </summary>
     public partial class SearchEditMemberInformation : Window
     {
-        SqlConnection con;
+        readonly SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
         public static int SetValueForUserId = 0;
         public SearchEditMemberInformation()
         {
@@ -30,40 +30,60 @@ namespace Library
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
             string UserId = UserIdTxtBx.Text;
-            
 
-            if (string.IsNullOrEmpty(UserId) )
+            try
             {
-                MessageBox.Show("Please enter valid Values");
-                UserIdTxtBx.Focus();
-                
 
-            }
-            else
-            {
-                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
-                con.Open();
-                SqlCommand checkUser = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Id= @Id", con);
-                checkUser.Parameters.AddWithValue("@Id", UserIdTxtBx.Text);
-                int BookExist = (int)checkUser.ExecuteScalar();
-
-                if (BookExist > 0)
+                if (string.IsNullOrEmpty(UserId))
                 {
+                    MessageBox.Show(
+                                   messageBoxText: "Please enter valid Values.",
+                                   caption: "Error",
+                                   button: MessageBoxButton.OK,
+                                   MessageBoxImage.Error);
+                    UserIdTxtBx.Focus();
 
-                    SetValueForUserId = int.Parse(UserIdTxtBx.Text);
-                    new EditBookInformation().Show();
-                    Close();
+
                 }
                 else
                 {
-                    MessageBox.Show("User Not Found !");
-                }
+                   
+                    con.Open();
+                    SqlCommand checkUser = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Id= @Id", con);
+                    checkUser.Parameters.AddWithValue("@Id", UserIdTxtBx.Text);
+                    int BookExist = (int)checkUser.ExecuteScalar();
 
-                SetValueForUserId = int.Parse(UserIdTxtBx.Text);
-                new EditMemberInformation().Show();
-                Close();
-                    
-                    
+                    if (BookExist > 0)
+                    {
+
+                        SetValueForUserId = int.Parse(UserIdTxtBx.Text);
+                        new EditBookInformation().Show();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                                   messageBoxText: "User Not Found!",
+                                   caption: "Error",
+                                   button: MessageBoxButton.OK,
+                                   MessageBoxImage.Error);
+
+                    }
+
+                    SetValueForUserId = int.Parse(UserIdTxtBx.Text);
+                    new EditMemberInformation().Show();
+                    Close();
+
+
+                }
+            }
+            catch (Exception b)
+            {
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
         }
 

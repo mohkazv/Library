@@ -21,69 +21,83 @@ namespace Library
     /// </summary>
     public partial class SignIn : Window
     {
-        SqlConnection con;
+        readonly SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
         public static string SetValueForEmail = "";
         public SignIn()
         {
             InitializeComponent();
         }
-    
+
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetValueForEmail = InfoTxtBx.Text;
-            if (MainWindow.Librarian == true)
+            try
             {
-                
-
-                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("select Email,Password from Admins where Email='" + InfoTxtBx.Text + "'and Password='" + PasswordTxtBx.Password + "'", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
+                SetValueForEmail = InfoTxtBx.Text;
+                if (MainWindow.Librarian == true)
                 {
-                    MessageBox.Show("Login sucess Welcome  ");
-                    new LibrarianDashboard().Show();
-                    Close();
 
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("select Email,Password from Admins where Email='" + InfoTxtBx.Text + "'and Password='" + PasswordTxtBx.Password + "'", con);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Login sucess Welcome  ");
+                        new LibrarianDashboard().Show();
+                        Close();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                               messageBoxText: "Invalid Login please check username and password.",
+                               caption: "Error",
+                               button: MessageBoxButton.OK,
+                               MessageBoxImage.Error);
+
+                    }
+                    con.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Login please check username and password");
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("select Email,Password from Users where Email='" + InfoTxtBx.Text + "'and Password='" + PasswordTxtBx.Password + "'", con);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Login sucess Welcome  ");
+                        new MemberDashboard().Show();
+                        Close();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                               messageBoxText: "Invalid Login please check username and password.",
+                               caption: "Error",
+                               button: MessageBoxButton.OK,
+                               MessageBoxImage.Error);
+                    }
+                    con.Close();
                 }
-                con.Close();
             }
-            else
+            catch (Exception b)
             {
-                
-                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("select Email,Password from Users where Email='" + InfoTxtBx.Text + "'and Password='" + PasswordTxtBx.Password + "'", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    MessageBox.Show("Login sucess Welcome  ");
-                    new MemberDashboard().Show();
-                    Close();
-
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Login please check username and password");
-                }
-                con.Close();
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
-            
         }
 
         private void SignInPage_Loaded(object sender, RoutedEventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+            
             con.Open();
 
 

@@ -22,7 +22,7 @@ namespace Library
     public partial class MemberAccountDashboard : Window
     {
         SqlCommand cmd;
-        SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
+        readonly SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
         public MemberAccountDashboard()
         {
             InitializeComponent();
@@ -46,7 +46,12 @@ namespace Library
 
                 if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) &&  string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate) && GenderCmBx.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please enter valid Values");
+                    MessageBox.Show(
+                           messageBoxText: "Please enter valid Values.",
+                           caption: "Error",
+                           button: MessageBoxButton.OK,
+                           MessageBoxImage.Error);
+
                     FirstNameTxtBx.Focus();
                     LastNameTxtBx.Focus();
                     GenderCmBx.Focus();

@@ -21,7 +21,7 @@ namespace Library
     public partial class SignUp : Window
     {
         SqlCommand cmd;
-        SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+        readonly SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
         public SignUp()
         {
             InitializeComponent();
@@ -32,7 +32,6 @@ namespace Library
         {
             string FirstName = FirstNameTxtBx.Text;
             string LastName = LastNameTxtBx.Text;
-            string Gender = GenderCmBx.Text;
             string Email = EmailTxtBx.Text;
             string Username = UsernameTxtBx.Text;
             string PhoneNumber = PhoneNumberTxtBx.Text;
@@ -45,7 +44,7 @@ namespace Library
 
                 if (MainWindow.Librarian == true)
                 { 
-                    if (string.IsNullOrEmpty(FirstNameTxtBx.Text) && string.IsNullOrEmpty(LastNameTxtBx.Text) && string.IsNullOrEmpty(EmailTxtBx.Text) && string.IsNullOrEmpty(UsernameTxtBx.Text) && string.IsNullOrEmpty(PhoneNumberTxtBx.Text) && string.IsNullOrEmpty(PasswordTxtBx.Password) && string.IsNullOrEmpty(EducationTxtBx.Text) && BirthDateDP.SelectedDate == null && GenderCmBx.SelectedIndex == -1)
+                    if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && BirthDateDP.SelectedDate == null && GenderCmBx.SelectedIndex == -1)
                     {
 
                         MessageBox.Show(

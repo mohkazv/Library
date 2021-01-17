@@ -20,8 +20,8 @@ namespace Library
     /// </summary>
     public partial class SearchEditBookInformation : Window
     {
-      
-        SqlConnection con;
+
+        readonly SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
         public static int SetValueForBookId = 0;
 
         public SearchEditBookInformation()
@@ -37,13 +37,16 @@ namespace Library
             if (string.IsNullOrEmpty(BookId))
 
             {
-                MessageBox.Show("Please enter valid Values");
+                MessageBox.Show(
+                           messageBoxText: "Please enter valid Values.",
+                           caption: "Error",
+                           button: MessageBoxButton.OK,
+                           MessageBoxImage.Error);
                 BookIdTxtBx.Focus();
             }
 
             else
-            {
-                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+            { 
                 con.Open();
                 SqlCommand checkBook = new SqlCommand("SELECT COUNT(*) FROM Books WHERE Id= @Id", con);
                 checkBook.Parameters.AddWithValue("@Id", BookIdTxtBx.Text);
@@ -57,7 +60,11 @@ namespace Library
                 }
                 else
                 {
-                    MessageBox.Show("Book Not Found !");
+                    MessageBox.Show(
+                              messageBoxText: "Book not Found.",
+                              caption: "Error",
+                              button: MessageBoxButton.OK,
+                              MessageBoxImage.Error);
                 }
               
             }

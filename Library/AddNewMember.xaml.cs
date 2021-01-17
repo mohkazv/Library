@@ -22,7 +22,7 @@ namespace Library
     public partial class AddNewMember : Window
     {
         SqlCommand cmd;
-        SqlConnection con;
+        readonly SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
         public AddNewMember()
         {
             InitializeComponent();
@@ -33,7 +33,6 @@ namespace Library
         {
             string FirstName = FirstNameTxtBx.Text;
             string LastName = LastNameTxtBx.Text;
-            string Gender = GenderCmBx.Text;
             string Email = EmailTxtBx.Text;
             string Username = UsernameTxtBx.Text;
             string PhoneNumber = PhoneNumberTxtBx.Text;
@@ -46,8 +45,13 @@ namespace Library
 
                     if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName)  && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate) && GenderCmBx.SelectedIndex == -1)
                     {
-                        MessageBox.Show("Please enter valid Values");
-                        FirstNameTxtBx.Focus();
+                    MessageBox.Show(
+                       messageBoxText: "Please enter valid Values.",
+                       caption: "Error",
+                       button: MessageBoxButton.OK,
+                       MessageBoxImage.Error);
+
+                    FirstNameTxtBx.Focus();
                         LastNameTxtBx.Focus();
                         GenderCmBx.Focus();
                         EmailTxtBx.Focus();
@@ -59,7 +63,7 @@ namespace Library
 
                     }
                     else {
-                        con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+
                         con.Open();
                         cmd = new SqlCommand("INSERT INTO Users (FirstName,LastName,Gender,Email,Username,PhoneNumber,Password,BirthDate,Education,RegisterDate) VALUES (@FirstName,@LastName,@Gender,@Email,@Username,@PhoneNumber,@Password,@BirthDate,@Education,@RegisterDate)", con);
                         cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
@@ -81,10 +85,14 @@ namespace Library
                         con.Close();
                     }
                 }
-           
+
             catch (Exception b)
             {
-                MessageBox.Show("Exception occur :" + b.Message + "\t" + b.GetType());
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
         }
 

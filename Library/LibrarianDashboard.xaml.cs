@@ -22,7 +22,7 @@ namespace Library
     public partial class LibrarianDashboard : Window
     {
         SqlCommand cmd;
-        SqlConnection con;
+        readonly SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
         public LibrarianDashboard()
         {
             InitializeComponent();
@@ -59,7 +59,6 @@ namespace Library
             
             try
             {
-                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
                 con.Open();
                 cmd = new SqlCommand("Select FirstName,LastName from Admins where Email='" + SignIn.SetValueForEmail + "'", con);
 
@@ -72,9 +71,13 @@ namespace Library
                 con.Close();
 
             }
-            catch (Exception)
+            catch (Exception b)
             {
-
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
         }
     }

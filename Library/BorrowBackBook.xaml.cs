@@ -21,7 +21,7 @@ namespace Library
     public partial class BorrowBackBook : Window
     {
         SqlCommand cmd;
-        SqlConnection con;
+        readonly SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
         public BorrowBackBook()
         {
             InitializeComponent();
@@ -38,21 +38,24 @@ namespace Library
 
                 if (string.IsNullOrEmpty(BookId) && string.IsNullOrEmpty(UserId))
                 {
-                    MessageBox.Show("Please enter valid Values");
+                    MessageBox.Show(
+                            messageBoxText: "Please enter valid Values.",
+                            caption: "Error",
+                            button: MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+
                     BookIdTxtBx.Focus();
                     UserIdTxtBx.Focus();
                 }
                 else
                 {
-                    con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
+         
                     con.Open();
-
                     cmd = new SqlCommand("Delete From BorrowedBooks Where BookId=@BookId and UserId=@UserId", con);
 
                     cmd.Parameters.AddWithValue("@BookId", BookIdTxtBx.Text);
                     cmd.Parameters.AddWithValue("@UserId", UserIdTxtBx.Text);
                
-
                     int deleted = cmd.ExecuteNonQuery();
                     MessageBox.Show(
                                   messageBoxText: $"The Book successfully Borrowed Back",
@@ -62,13 +65,19 @@ namespace Library
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception b)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
+
+
         }
 
-        private void BackBtn_Click(object sender, RoutedEventArgs e)
+            private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             new BookDashboard().Show();
             Close();

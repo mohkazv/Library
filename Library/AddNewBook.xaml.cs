@@ -22,7 +22,7 @@ namespace Library
     public partial class AddNewBook : Window
     {
         SqlCommand cmd;
-        SqlConnection con;
+        readonly SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
         public AddNewBook()
         {
             InitializeComponent();
@@ -43,7 +43,12 @@ namespace Library
 
                 if (string.IsNullOrEmpty(BookName) && string.IsNullOrEmpty(Category) && string.IsNullOrEmpty(Available) && string.IsNullOrEmpty(Edition) && string.IsNullOrEmpty(PublishedYear) && string.IsNullOrEmpty(AuthorName) && string.IsNullOrEmpty(ISBN))
                 {
-                    MessageBox.Show("Please enter valid Values");
+                    MessageBox.Show(
+                           messageBoxText: "Please enter valid Values.",
+                           caption: "Error",
+                           button: MessageBoxButton.OK,
+                           MessageBoxImage.Error);
+
                     BookNameTxtBx.Focus();
                     CategoryTxtBx.Focus();
                     AvailableTxtBx.Focus();
@@ -56,7 +61,7 @@ namespace Library
                 }
                 else
                 {
-                    con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                    
                     con.Open();
                     cmd = new SqlCommand("INSERT INTO Books (BookName,CategoryTitle,Available,PublishedYear,Edition,AuthorName,ISBN,Language) VALUES (@BookName,@CategoryTitle,@Available,@PublishedYear,@Edition,@AuthorName,@ISBN,@Language)", con);
                     cmd.Parameters.Add("@BookName", BookNameTxtBx.Text);
@@ -79,7 +84,11 @@ namespace Library
             }
             catch (Exception b)
             {
-                MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
 
 

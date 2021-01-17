@@ -22,7 +22,7 @@ namespace Library
     public partial class EditBookInformation : Window
     {
         SqlCommand cmd;
-        SqlConnection con;
+        SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
         public EditBookInformation()
         {
             InitializeComponent();
@@ -43,8 +43,13 @@ namespace Library
 
             if (string.IsNullOrEmpty(BookName) && string.IsNullOrEmpty(Category) && string.IsNullOrEmpty(Available) && string.IsNullOrEmpty(Edition) && string.IsNullOrEmpty(PublishedYear) && string.IsNullOrEmpty(AuthorName) && string.IsNullOrEmpty(ISBN))
             {
-                MessageBox.Show("Please enter valid Values");
-                BookNameTxtBx.Focus();
+                    MessageBox.Show(
+                                messageBoxText: "Please enter valid Values.",
+                                caption: "Error",
+                                button: MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+
+                    BookNameTxtBx.Focus();
                 CategoryTxtBx.Focus();
                 AvailableTxtBx.Focus();
                 EditionTxtBx.Focus();
@@ -56,7 +61,7 @@ namespace Library
             }
             else
             {
-                con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
+               
                 con.Open();
 
                 cmd = new SqlCommand("Delete From Books Where BookName=@BookName and CategoryTitle=@CategoryTitle and Available=@Available and PublishedYear=@PublishedYear and Edition=@Edition and AuthorName=@AuthorName and ISBN=@ISBN and Language=@Language ", con);
@@ -79,11 +84,14 @@ namespace Library
 
             }
         }
-              catch (Exception ex)
+            catch (Exception b)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
-
 
 
         }
@@ -103,7 +111,12 @@ namespace Library
 
                 if (string.IsNullOrEmpty(BookName) && string.IsNullOrEmpty(Category) && string.IsNullOrEmpty(Available) && string.IsNullOrEmpty(Edition) && string.IsNullOrEmpty(PublishedYear) && string.IsNullOrEmpty(AuthorName) && string.IsNullOrEmpty(ISBN))
                 {
-                    MessageBox.Show("Please enter valid Values");
+                    MessageBox.Show(
+                            messageBoxText: "Please enter valid Values.",
+                            caption: "Error",
+                            button: MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+
                     BookNameTxtBx.Focus();
                     CategoryTxtBx.Focus();
                     AvailableTxtBx.Focus();
@@ -138,7 +151,11 @@ namespace Library
             }
             catch (Exception b)
             {
-                MessageBox.Show("Exception occur :" + b.Message + "\t" + b.GetType());
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
 
         }
@@ -174,9 +191,13 @@ namespace Library
                 }
                 con.Close();
             }
-            catch (Exception ex)
+            catch (Exception b)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
 
         }

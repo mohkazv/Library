@@ -22,7 +22,7 @@ namespace Library
     public partial class BorrowBook : Window
     {
         SqlCommand cmd;
-        SqlConnection con;
+        readonly SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
         public BorrowBook()
         {
             InitializeComponent();
@@ -45,7 +45,12 @@ namespace Library
                 
                 if (string.IsNullOrEmpty(BookId) && string.IsNullOrEmpty(UserId) && ReturnDateDP.SelectedDate == null && DeadlineDateDp.SelectedDate == null )
                 {
-                    MessageBox.Show("Please enter valid Values");
+                    MessageBox.Show(
+                            messageBoxText: "Please enter valid Values.",
+                            caption: "Error",
+                            button: MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+
                     BookIdTxtBx.Focus();
                     UserIdTxtBx.Focus();
                     ReturnDateDP.Focus();
@@ -55,7 +60,6 @@ namespace Library
                 }
                 else
                 {
-                    con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                     con.Open();
                     cmd = new SqlCommand("INSERT INTO BorrowedBooks (BookId,UserId,ReturnDate,DeadLineDate,IssueDate) VALUES (@BookId,@UserId,@ReturnDate,@DeadLineDate,@IssueDate)", con);
                     cmd.Parameters.Add("@BookId", BookIdTxtBx.Text);
@@ -72,9 +76,13 @@ namespace Library
                     con.Close();
                 } 
             }
-            catch (Exception ex)
+            catch (Exception b)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(
+                    messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
+                    caption: "Exception",
+                    button: MessageBoxButton.OK,
+                     icon: MessageBoxImage.Error);
             }
         }
     }
