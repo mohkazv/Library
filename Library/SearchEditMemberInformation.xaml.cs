@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.Data.Sql;
+using System.Data.SqlClient;
 namespace Library
 {
     /// <summary>
@@ -19,6 +20,7 @@ namespace Library
     /// </summary>
     public partial class SearchEditMemberInformation : Window
     {
+        SqlConnection con;
         public static int SetValueForUserId = 0;
         public SearchEditMemberInformation()
         {
@@ -39,6 +41,23 @@ namespace Library
             }
             else
             {
+                con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
+                con.Open();
+                SqlCommand checkUser = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Id= @Id", con);
+                checkUser.Parameters.AddWithValue("@Id", UserIdTxtBx.Text);
+                int BookExist = (int)checkUser.ExecuteScalar();
+
+                if (BookExist > 0)
+                {
+
+                    SetValueForUserId = int.Parse(UserIdTxtBx.Text);
+                    new EditBookInformation().Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("User Not Found !");
+                }
 
                 SetValueForUserId = int.Parse(UserIdTxtBx.Text);
                 new EditMemberInformation().Show();
