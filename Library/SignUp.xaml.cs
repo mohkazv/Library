@@ -59,7 +59,8 @@ namespace Library
 
                     }
 
-                    else {
+                    else
+                    {
                         con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                         con.Open();
                         cmd = new SqlCommand("INSERT INTO Admins (FirstName,LastName,Gender,Email,Username,PhoneNumber,Password,BirthDate,RegisterDate,Education) VALUES (@FirstName,@LastName,@Gender,@Email,@Username,@PhoneNumber,@Password,@BirthDate,@RegisterDate,@Education)", con);
@@ -87,10 +88,9 @@ namespace Library
                 }
                 catch (Exception b)
                 {
-                    MessageBox.Show("Exception occur while creating table:" + b.Message + "\t" + b.GetType());
+                    MessageBox.Show("Exception occur :" + b.Message + "\t" + b.GetType());
                 }
             }
-
             else
             {
                 try
@@ -105,7 +105,7 @@ namespace Library
                     string Education = EducationTxtBx.Text;
                     string BirthDate = BirthDateDP.Text;
 
-                    if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Gender) && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate))
+                    if (string.IsNullOrEmpty(FirstNameTxtBx.Text) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Gender) && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && string.IsNullOrEmpty(BirthDate))
                     {
                         MessageBox.Show("Please enter valid Values");
                         FirstNameTxtBx.Focus();
@@ -146,24 +146,27 @@ namespace Library
                 catch (Exception b)
                 {
                     MessageBox.Show("Exception occur :" + b.Message + "\t" + b.GetType());
-                } 
+                }
             }
 
         }
 
-        private void SignUp1_Loaded(object sender, RoutedEventArgs e)
+        private void SignUp1_Loaded_1(object sender, RoutedEventArgs e)
         {
-            if (MainWindow.Librarian == true) 
+            if (MainWindow.Librarian == true)
             {
                 textblockTxB.Text = "Sign Up as Librarian :";
-                
+
             }
             else
             {
                 textblockTxB.Text = "Sign Up as Member :";
             }
         }
+    }
+}
 
-    }
-    }
+
+
+
 
