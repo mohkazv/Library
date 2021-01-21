@@ -81,6 +81,8 @@ namespace Library
                               caption: "Successful Remove",
                               button: MessageBoxButton.OK,
                               icon: MessageBoxImage.Information);
+                    new SearchEditBookInformation().Show();
+                    Close();
 
             }
         }
