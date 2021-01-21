@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="EditMemberInformation" Height="325.277" Width="672.053" Loaded="EditMemberInformatin1_Loaded">
+        Title="Edit Member Information Page" Height="325.277" Width="672.053" Loaded="EditMemberInformatin1_Loaded">
     <Grid Margin="-3,3,-0.667,-11" HorizontalAlignment="Left" Width="669">
         <Label Content="First Name :" HorizontalAlignment="Left" Margin="25,14,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="FirstNameTxtBx" HorizontalAlignment="Left" Margin="102,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Ink Free" FontWeight="Bold"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="SignIn" Height="240" Width="420" Loaded="SignInPage_Loaded">
+        Title="Sign In Page" Height="240" Width="420" Loaded="SignInPage_Loaded">
     <Grid Margin="0,0,-0.667,-0.333">
         <TextBox x:Name="InfoTxtBx" HorizontalAlignment="Left" Margin="93,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" FontWeight="Bold" FontFamily="Ink Free" Height="24"/>
         <Label Content="Password " HorizontalAlignment="Left" Margin="89,100,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Width="71"/>

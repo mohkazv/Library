@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="MemberSearchBook" Height="482.75" Width="654" Loaded="MemberSearchBook1_Loaded">
+        Title="Member Search For Book Page" Height="482.75" Width="654" Loaded="MemberSearchBook1_Loaded">
     <Grid>
         <DataGrid x:Name="MemberSearchBookDG" HorizontalAlignment="Left" Height="244" Margin="3,2,0,0" VerticalAlignment="Top" Width="644"/>
         <Label Content="Search by Book Title or Author name or Subject name  :" HorizontalAlignment="Left" Margin="77,301,0,0" VerticalAlignment="Top" Width="429" FontSize="16" FontFamily="Ink Free" FontWeight="Bold"/>

@@ -1,11 +1,11 @@
-﻿<Window x:Name="LibrarianAcountDashboard1" x:Class="Library.LibrarianAccountDashboard"
+﻿<Window x:Name="LibrarianAcocuntDashboard1" x:Class="Library.LibrarianAccountDashboard"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="LibrarianAccountDashboard" Height="300" Width="700" Loaded="LibrarianAcountDashboard1_Loaded">
+        Title="Librarian Account Dashboard" Height="300" Width="700" Loaded="LibrarianAcountDashboard1_Loaded">
     <Grid Margin="0,0,-5.667,0.667">
         <Label Content="First Name :" HorizontalAlignment="Left" Margin="25,14,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="FirstNameTxtBx" HorizontalAlignment="Left" Margin="102,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Ink Free" FontWeight="Bold"/>

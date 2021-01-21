@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="BookDashboard" Height="272.027" Width="685.368">
+        Title="Book Dashboard" Height="272.027" Width="685.368">
     <Grid Margin="0,0,-0.333,-1.333">
         <Button x:Name="AddNewBookBtn" Content="Add &#xD;&#xA;New Book" HorizontalAlignment="Left" Margin="70,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="AddNewBookBtn_Click"/>
         <Button x:Name="EditBookInformationBtn" Content="Edit Book&#xA; Information" HorizontalAlignment="Left" Margin="220,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="EditBookInformationBtn_Click"/>

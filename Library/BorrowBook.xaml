@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="BorrowBook" Height="200" Width="620">
+        Title="Borrow Book Page" Height="200" Width="620">
     <Grid Margin="0,0,-1.667,-0.373">
         <Label Content="Book Id :" HorizontalAlignment="Left" Margin="25,8,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="25" Width="75"/>
         <TextBox x:Name="BookIdTxtBx" HorizontalAlignment="Left" Margin="87,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" FontFamily="Ink Free" FontWeight="Bold" Height="17"/>

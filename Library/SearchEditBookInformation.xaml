@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="SearchEditBookInformation" Height="150" Width="490">
+        Title="Search For Edit Book Information Page" Height="150" Width="490">
     <Grid Margin="0,0,-1.667,-4.333">
         <Label Content="Book Id :" HorizontalAlignment="Left" Margin="70,27,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBox x:Name="BookIdTxtBx" HorizontalAlignment="Left" Margin="129,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" FontFamily="Ink Free" FontWeight="Bold"/>

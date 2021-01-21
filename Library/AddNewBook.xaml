@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="AddNewBook" Height="214.667" Width="700">
+        Title="Add New Book Page " Height="214.667" Width="700">
     <Grid Margin="0,0,-3.667,1.667">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

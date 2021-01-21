@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="MemberLoginPage" Height="450" Width="550">
+        Title="Member LoginPage" Height="450" Width="550">
     <Grid Margin="0,0,-4.667,0.667">
         <Label Content="Welcome ! &#xA;to Library Management System ." HorizontalAlignment="Left" Margin="32,69,0,0" VerticalAlignment="Top" Width="485" Height="80" FontFamily="Ink Free" FontSize="22" FontWeight="Bold"/>
         <Button x:Name="SignUpbtn" Content="Sign Up" HorizontalAlignment="Left" Margin="174,290,0,0" VerticalAlignment="Top" Width="170" FontFamily="Ink Free" FontSize="14" RenderTransformOrigin="0.431,-1.218" Height="50" Click="SignUpButton_Click" FontWeight="Bold"/>

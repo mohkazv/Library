@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="MemberborrowedBook" Height="500" Width="505.333" Loaded="MemberBorrowedBook1_Loaded">
+        Title="Member borrowedBook Page" Height="500" Width="505.333" Loaded="MemberBorrowedBook1_Loaded">
 
     <Grid>
         <Separator HorizontalAlignment="Left" Margin="88,368,0,0" VerticalAlignment="Top" Height="58" Width="332" FontFamily="Ink Free" FontWeight="Bold"/>

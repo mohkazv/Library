@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="ExtendBorrowedBookDate" Height="193" Width="469.334">
+        Title="Extend Borrowed Book Date Page " Height="193" Width="469.334">
     <Grid Margin="0,0,2.667,1.667">
         <Label Content="Return Date :" HorizontalAlignment="Left" Margin="47,13,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold"/>
         <Label Content="Deadline Date :" HorizontalAlignment="Left" Margin="37,53,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold"/>

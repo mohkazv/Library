@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="550">
+        Title="Main Window" Height="450" Width="550">
     <Grid Margin="0,0,-4.667,0.667">
         <Label Content="Welcome ! &#xA;to Library Management System ." HorizontalAlignment="Left" Margin="32,69,0,0" VerticalAlignment="Top" Width="485" Height="80" FontFamily="Ink Free" FontSize="22" FontWeight="Bold"/>
         <Separator HorizontalAlignment="Left" Margin="81,143,0,0" VerticalAlignment="Top" Height="86" RenderTransformOrigin="0.5,0.5" Width="389" FontFamily="Ink Free" FontWeight="Bold" FontSize="14">
