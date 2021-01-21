@@ -63,6 +63,9 @@ namespace Library
                                   button: MessageBoxButton.OK,
                                   icon: MessageBoxImage.Information);
 
+                    BookIdTxtBx.Text = "";
+                    UserIdTxtBx.Text = "";
+
                 }
             }
             catch (Exception b)

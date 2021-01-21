@@ -26,7 +26,7 @@ namespace Library
         {
             InitializeComponent();
         }
-        
+
         [Obsolete]
         private void SignUpBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -43,7 +43,7 @@ namespace Library
             {
 
                 if (MainWindow.Librarian == true)
-                { 
+                {
                     if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName) && string.IsNullOrEmpty(Email) && string.IsNullOrEmpty(Username) && string.IsNullOrEmpty(PhoneNumber) && string.IsNullOrEmpty(Password) && string.IsNullOrEmpty(Education) && BirthDateDP.SelectedDate == null && GenderCmBx.SelectedIndex == -1)
                     {
 
@@ -85,11 +85,10 @@ namespace Library
                                 icon: MessageBoxImage.Information);
                         con.Close();
                         new LibrarianLoginPage().Show();
-                        Close();
-                    }
 
 
-                }
+
+                    } }
                 else
                 {
 
@@ -97,9 +96,9 @@ namespace Library
                     {
 
                         MessageBox.Show(
-                            messageBoxText :"Please enter valid Values.",
-                            caption:"Error",
-                            button:MessageBoxButton.OK,
+                            messageBoxText: "Please enter valid Values.",
+                            caption: "Error",
+                            button: MessageBoxButton.OK,
                             MessageBoxImage.Error);
 
                         FirstNameTxtBx.Focus();
@@ -136,6 +135,7 @@ namespace Library
                         new MemberLoginPage().Show();
                         Close();
 
+
                     }
                 }
 
@@ -146,11 +146,15 @@ namespace Library
                     messageBoxText: "Exception occur :" + b.Message + "\t" + b.GetType(),
                     caption: "Exception",
                     button: MessageBoxButton.OK,
-                     icon: MessageBoxImage.Error) ;
+                     icon: MessageBoxImage.Error);
             }
-
-
         }
+          
+            
+            
+
+
+        
 
 
 
@@ -166,10 +170,9 @@ namespace Library
                 textblockTxB.Text = "Sign Up as Member :";
             }
         }
-    }
+
+
+    } 
 }
-
-
-
 
 

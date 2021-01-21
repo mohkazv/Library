@@ -80,6 +80,17 @@ namespace Library
                                button: MessageBoxButton.OK,
                                icon: MessageBoxImage.Information);
                     con.Close();
+                     BookNameTxtBx.Text = "";
+                    CategoryTxtBx.Text = "";
+                    AvailableTxtBx.Text = "";
+                     EditionTxtBx.Text = "";
+                    PublishYearTxtBx.Text = "";
+                    AuthorTxtBx.Text = "";
+                     ISBNTxtBx.Text = "" ;
+                    LanguageTxtBx.Text = "";
+
+
+
                 } 
             }
             catch (Exception b)

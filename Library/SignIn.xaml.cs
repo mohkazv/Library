@@ -35,13 +35,14 @@ namespace Library
                 SetValueForEmail = InfoTxtBx.Text;
                 if (MainWindow.Librarian == true)
                 {
-
+                    
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand("select Email,Password from Admins where Email='" + InfoTxtBx.Text + "'and Password='" + PasswordTxtBx.Password + "'", con);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
+                    
                     if (dt.Rows.Count > 0)
                     {
                         MessageBox.Show("Login sucess Welcome  ");
@@ -59,9 +60,11 @@ namespace Library
 
                     }
                     con.Close();
+
                 }
                 else
                 {
+                   
                     con.Open();
                     SqlCommand cmd = new SqlCommand("select Email,Password from Users where Email='" + InfoTxtBx.Text + "'and Password='" + PasswordTxtBx.Password + "'", con);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -98,7 +101,7 @@ namespace Library
         private void SignInPage_Loaded(object sender, RoutedEventArgs e)
         {
             
-            con.Open();
+           
 
 
             if (MainWindow.Librarian == true)

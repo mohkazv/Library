@@ -57,6 +57,8 @@ namespace Library
                                button: MessageBoxButton.OK,
                                icon: MessageBoxImage.Information);
                     con.Close();
+                    ReturnDateDP.Text = "";
+                    DeadlineDP.Text = "";
                 } 
             }
             catch (Exception b)
