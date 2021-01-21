@@ -79,7 +79,7 @@ namespace Library
                     cmd.Parameters.AddWithValue("@BirthDate", BirthDateDP.Text);
                     int deleted = cmd.ExecuteNonQuery();
                     MessageBox.Show(
-                                  messageBoxText: $"User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» successfully Removed",
+                                  messageBoxText: $"User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}» Successfully Removed",
                                   caption: "Successful Removing",
                                   button: MessageBoxButton.OK,
                                   icon: MessageBoxImage.Information);
