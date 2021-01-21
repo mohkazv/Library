@@ -40,8 +40,9 @@ namespace Library
                 string PublishedYear = PublishYearTxtBx.Text;
                 string AuthorName = AuthorTxtBx.Text;
                 string ISBN = ISBNTxtBx.Text;
+                string Language = LanguageTxtBx.Text;
 
-                if (string.IsNullOrEmpty(BookName) && string.IsNullOrEmpty(Category) && string.IsNullOrEmpty(Available) && string.IsNullOrEmpty(Edition) && string.IsNullOrEmpty(PublishedYear) && string.IsNullOrEmpty(AuthorName) && string.IsNullOrEmpty(ISBN))
+                if (string.IsNullOrEmpty(BookName) && string.IsNullOrEmpty(Category) && string.IsNullOrEmpty(Available) && string.IsNullOrEmpty(Edition) && string.IsNullOrEmpty(PublishedYear) && string.IsNullOrEmpty(AuthorName) && string.IsNullOrEmpty(ISBN) && string.IsNullOrEmpty(Language))
                 {
                     MessageBox.Show(
                            messageBoxText: "Please enter valid Values.",
@@ -56,7 +57,7 @@ namespace Library
                     PublishYearTxtBx.Focus();
                     AuthorTxtBx.Focus();
                     ISBNTxtBx.Focus();
-
+                    LanguageTxtBx.Focus();
 
                 }
                 else
@@ -72,7 +73,6 @@ namespace Library
                     cmd.Parameters.Add("@AuthorName", AuthorTxtBx.Text);
                     cmd.Parameters.Add("@ISBN", ISBNTxtBx.Text);
                     cmd.Parameters.Add("@Language", LanguageTxtBx.Text);
-                    //cmd.Parameters.Add("@RegisterDate", DateTime.Now);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show(
                                messageBoxText: $"Book «{BookNameTxtBx.Text}» successfully Added",

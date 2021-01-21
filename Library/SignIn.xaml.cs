@@ -101,9 +101,6 @@ namespace Library
         private void SignInPage_Loaded(object sender, RoutedEventArgs e)
         {
             
-           
-
-
             if (MainWindow.Librarian == true)
             {
                 textblockTxB.Text = "Sign in as Librarian :";
