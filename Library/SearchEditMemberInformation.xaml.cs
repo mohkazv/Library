@@ -57,7 +57,7 @@ namespace Library
                     {
 
                         SetValueForUserId = int.Parse(UserIdTxtBx.Text);
-                        new EditBookInformation().Show();
+                        new EditMemberInformation().Show();
                         Close();
                     }
                     else
@@ -69,11 +69,6 @@ namespace Library
                                    MessageBoxImage.Error);
 
                     }
-
-                    SetValueForUserId = int.Parse(UserIdTxtBx.Text);
-                    new EditMemberInformation().Show();
-                    Close();
-
 
                 }
             }

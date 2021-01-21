@@ -85,15 +85,7 @@ namespace Library
                                   icon: MessageBoxImage.Information);
                     new SearchEditMemberInformation().Show();
                     Close();
-                    FirstNameTxtBx.Text = "";
-                    LastNameTxtBx.Text = "";
-                    GenderCmBx.Text = "";
-                    EmailTxtBx.Text = "";
-                    UsernameTxtBx.Text = "";
-                    PhoneNumberTxtBx.Text = "";
-                    PasswordTxtBx.Password = "";
-                    BirthDateDP.Text = "";
-                    EducationTxtBx.Text = "";
+                   
                 }
             }
 
@@ -167,16 +159,9 @@ namespace Library
                             caption: "Successful Update",
                             button: MessageBoxButton.OK,
                             icon: MessageBoxImage.Information);
-                    con.Close();
-                    FirstNameTxtBx.Text = "";
-                    LastNameTxtBx.Text = "";
-                    GenderCmBx.Text = "";
-                    EmailTxtBx.Text = "";
-                    UsernameTxtBx.Text = "";
-                    PhoneNumberTxtBx.Text = "";
-                    PasswordTxtBx.Password = "";
-                    BirthDateDP.Text = "";
-                    EducationTxtBx.Text = "";
+                    new SearchEditMemberInformation().Show();
+                    Close();
+
                 }
             }
             catch (Exception b)
