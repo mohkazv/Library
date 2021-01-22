@@ -85,12 +85,12 @@ namespace Library
                         con.Close();
                     FirstNameTxtBx.Text = "";
                     LastNameTxtBx.Text = "";
-                    GenderCmBx.Text = "";
+                    GenderCmBx.Text = "Gender";
                     EmailTxtBx.Text = "";
                     UsernameTxtBx.Text = "";
                     PhoneNumberTxtBx.Text = "";
                     PasswordTxtBx.Password = "";
-                    BirthDateDP.Text = "";
+                    BirthDateDP.SelectedDate = DateTime.Now;
                     EducationTxtBx.Text = "";
 
                     }
