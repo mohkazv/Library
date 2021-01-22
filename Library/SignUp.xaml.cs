@@ -150,14 +150,6 @@ namespace Library
             }
         }
           
-            
-            
-
-
-        
-
-
-
         private void SignUp1_Loaded_1(object sender, RoutedEventArgs e)
         {
             if (MainWindow.Librarian == true)

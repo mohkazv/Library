@@ -78,7 +78,7 @@ namespace Library
                     if (dt.Rows.Count > 0)
                     {
                         MessageBox.Show(
-                          messageBoxText: $"Login sucess Welcome  ",
+                          messageBoxText: $"Login sucess Welcome.",
                           caption: "Successful Login",
                           button: MessageBoxButton.OK,
                           icon: MessageBoxImage.Information);
@@ -113,11 +113,11 @@ namespace Library
             
             if (MainWindow.Librarian == true)
             {
-                textblockTxB.Text = "Sign in as Librarian :";
+                textblockTxB.Text = "Sign in as Librarian:";
             }
             else
             {
-                textblockTxB.Text = "Sign in as Member :";
+                textblockTxB.Text = "Sign in as Member:";
             }
         }
     }

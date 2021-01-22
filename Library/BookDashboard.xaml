@@ -11,7 +11,7 @@
         <Button x:Name="EditBookInformationBtn" Content="Edit Book&#xA; Information" HorizontalAlignment="Left" Margin="220,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="EditBookInformationBtn_Click"/>
         <Button x:Name="BorrowBookBtn" Content="Borrow &#xD;&#xA;Book" HorizontalAlignment="Left" Margin="370,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="BorrowBookBtn_Click"/>
         <Separator HorizontalAlignment="Left" Margin="51,161,0,0" VerticalAlignment="Top" Height="20" Width="583" FontFamily="Ink Free" FontWeight="Bold"/>
-        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="312,194,0,0" VerticalAlignment="Top" Width="87" Height="24" FontFamily="Ink Free" FontWeight="Bold" Click="BackBtn_Click"/>
+        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="293,194,0,0" VerticalAlignment="Top" Width="87" Height="24" FontFamily="Ink Free" FontWeight="Bold" Click="BackBtn_Click"/>
         <Button x:Name="BorrowBackBook" Content="Borrow Back &#xD;&#xA;Book" HorizontalAlignment="Left" Margin="520,40,0,0" VerticalAlignment="Top" Height="96" Width="98" FontFamily="Ink Free" FontWeight="Bold" Click="BorrowBackBookBtn_Click"/>
 
     </Grid>
