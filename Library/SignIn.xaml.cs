@@ -45,7 +45,12 @@ namespace Library
                     
                     if (dt.Rows.Count > 0)
                     {
-                        MessageBox.Show("Login sucess Welcome  ");
+                       
+                             MessageBox.Show(
+                            messageBoxText: $"Login sucess Welcome  ",
+                            caption: "Successful Login",
+                            button: MessageBoxButton.OK,
+                            icon: MessageBoxImage.Information);
                         new LibrarianDashboard().Show();
                         Close();
 
