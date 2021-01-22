@@ -23,6 +23,7 @@ namespace Library
     {
         SqlCommand cmd;
         readonly SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=Library;Integrated Security=True");
+        public static string SetValueForAdminId = "";
         public LibrarianDashboard()
         {
             InitializeComponent();
@@ -60,13 +61,13 @@ namespace Library
             try
             {
                 con.Open();
-                cmd = new SqlCommand("Select FirstName,LastName from Admins where Email='" + SignIn.SetValueForEmail + "'", con);
+                cmd = new SqlCommand("Select FirstName,LastName,Id from Admins where Email='" + SignIn.SetValueForEmail + "'", con);
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                    FullNameTxB.Text = "Loged in as Librarian" + " " + dr.GetValue(0).ToString()+ " " + dr.GetValue(1).ToString();
-
+                   SetValueForAdminId = dr.GetValue(2).ToString();
                 }
                 con.Close();
 

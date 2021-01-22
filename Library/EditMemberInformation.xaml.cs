@@ -142,7 +142,7 @@ namespace Library
                 else
                 {
                     con.Open();
-                    cmd = new SqlCommand("Update Users Set FirstName=@FirstName , LastName=@LastName , Gender=@Gender , Email=@Email , Username=@Username , PhoneNumber=@PhoneNumber , Password=@Password , Education=@Education , BirthDate=@BirthDate ", con);
+                    cmd = new SqlCommand("Update Users Set FirstName=@FirstName , LastName=@LastName , Gender=@Gender , Email=@Email , Username=@Username , PhoneNumber=@PhoneNumber , Password=@Password , Education=@Education , BirthDate=@BirthDate  where Id ='" + SearchEditMemberInformation.SetValueForUserId+"'", con);
                     cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
                     cmd.Parameters.Add("@LastName", LastNameTxtBx.Text);
                     cmd.Parameters.Add("@Gender", GenderCmBx.Text);

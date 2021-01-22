@@ -67,7 +67,7 @@ namespace Library
                 {
                    
                     con.Open();
-                    cmd = new SqlCommand("Update Users Set FirstName=@FirstName, LastName=@LastName, Gender=@Gender, Email=@Email, Username=@Username, PhoneNumber=@PhoneNumber, Password=@Password, Education=@Education, BirthDate=@BirthDate ", con);
+                    cmd = new SqlCommand("Update Users Set FirstName=@FirstName , LastName=@LastName , Gender=@Gender , Email=@Email , Username=@Username , PhoneNumber=@PhoneNumber , Password=@Password , Education=@Education , BirthDate=@BirthDate  where Id ='" + MemberDashboard.SetValueForUserId + "'", con);
                     cmd.Parameters.Add("@FirstName", FirstNameTxtBx.Text);
                     cmd.Parameters.Add("@LastName", LastNameTxtBx.Text);
                     cmd.Parameters.Add("@Gender", GenderCmBx.Text);
@@ -77,7 +77,7 @@ namespace Library
                     cmd.Parameters.Add("@Education", EducationTxtBx.Text);
                     cmd.Parameters.Add("@Password", PasswordTxtBx.Password);
                     cmd.Parameters.Add("@BirthDate", BirthDateDP.SelectedDate);
-                    cmd.Parameters.Add("@RegisterDate", DateTime.Now);
+                
                     cmd.ExecuteNonQuery();
                     MessageBox.Show(
                             messageBoxText: $"Information of User «{FirstNameTxtBx.Text + LastNameTxtBx.Text}»  Successfully Updated",

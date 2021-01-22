@@ -136,7 +136,7 @@ namespace Library
                 {
                     con = new SqlConnection(@"Data Source =.; Initial Catalog = Library; Integrated Security = True");
                     con.Open();
-                    cmd = new SqlCommand("Update Books Set BookName=@BookName , CategoryTitle=@CategoryTitle, Available=@Available , PublishedYear=@PublishedYear , Edition=@Edition , AuthorName=@AuthorName , ISBN=@ISBN , Language=@Language ", con);
+                    cmd = new SqlCommand("Update Books Set BookName=@BookName , CategoryTitle=@CategoryTitle, Available=@Available , PublishedYear=@PublishedYear , Edition=@Edition , AuthorName=@AuthorName , ISBN=@ISBN , Language=@Language where Id = '"+SearchEditBookInformation.SetValueForBookId, con);
                     cmd.Parameters.Add("@BookName", BookNameTxtBx.Text);
                     cmd.Parameters.Add("@CategoryTitle", CategoryTxtBx.Text);
                     cmd.Parameters.Add("@Available", AvailableTxtBx.Text);
