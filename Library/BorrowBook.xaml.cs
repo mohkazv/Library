@@ -69,7 +69,7 @@ namespace Library
                     cmd.Parameters.Add("@IssueDate", DateTime.Now);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show(
-                               messageBoxText: $"Book «{BookIdTxtBx.Text}» successfully Borrowed.",
+                               messageBoxText: $"Book with Book Id : «{BookIdTxtBx.Text}» successfully Borrowed.",
                                caption: "Successful Adding",
                                button: MessageBoxButton.OK,
                                icon: MessageBoxImage.Information);
