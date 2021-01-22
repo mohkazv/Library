@@ -49,7 +49,7 @@ namespace Library
                 using (SqlConnection sqlConn = new SqlConnection())
                 {
                     sqlConn.ConnectionString = "Data Source =.; Initial Catalog = Library; Integrated Security = True";
-                    string queryString = "select ReturnDate,DeadlineDate,BookName from BorrowedBooks Inner join Books on BorrowedBooks.BookId = Books.Id  where UserId = '" + userId + "'";
+                    string queryString = "select ReturnDate,DeadlineDate,BookName,BookId from BorrowedBooks Inner join Books on BorrowedBooks.BookId = Books.Id  where UserId = '" + userId + "'";
                     sqlConn.Open();
 
                     DataTable table = new DataTable();

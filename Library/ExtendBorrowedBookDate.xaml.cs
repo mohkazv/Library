@@ -47,7 +47,7 @@ namespace Library
                 else {
                     
                     con.Open();
-                    cmd = new SqlCommand("Update BorrowedBooks Set ReturnDate=@ReturnDate, DeadlineDate=@DeadLineDate Where UserId ='" + MemberDashboard.SetValueForUserId + "'", con);
+                    cmd = new SqlCommand("Update BorrowedBooks Set ReturnDate=@ReturnDate, DeadlineDate=@DeadLineDate Where UserId ='" + MemberDashboard.SetValueForUserId + "'and BookId ='"+ BookIdTxtBx.Text +"'", con);
                     cmd.Parameters.Add("@ReturnDate", ReturnDateDP.SelectedDate);
                     cmd.Parameters.Add("@DeadLineDate", DeadlineDP.SelectedDate);
                     cmd.ExecuteNonQuery();
@@ -57,8 +57,8 @@ namespace Library
                                button: MessageBoxButton.OK,
                                icon: MessageBoxImage.Information);
                     con.Close();
-                    ReturnDateDP.Text = "";
-                    DeadlineDP.Text = "";
+                    new MemberborrowedBook().Show();
+                    Close();
                 } 
             }
             catch (Exception b)
@@ -76,5 +76,7 @@ namespace Library
             new MemberborrowedBook().Show();
             Close();
         }
+
+        
     }
 }

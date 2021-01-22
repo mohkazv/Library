@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="Extend Borrowed Book Date Page " Height="193" Width="469.334">
+        Title="Extend Borrowed Book Date Page " Height="239.667" Width="469.334">
     <Grid Margin="0,0,2.667,1.667">
         <Label Content="Return Date :" HorizontalAlignment="Left" Margin="47,13,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold"/>
         <Label Content="Deadline Date :" HorizontalAlignment="Left" Margin="37,53,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold"/>
         <DatePicker x:Name="ReturnDateDP" HorizontalAlignment="Left" Margin="133,14,0,0" VerticalAlignment="Top" Width="285" FontFamily="Ink Free" FontWeight="Bold"/>
         <DatePicker x:Name="DeadlineDP" HorizontalAlignment="Left" Margin="134,56,0,0" VerticalAlignment="Top" Width="285" FontFamily="Ink Free" FontWeight="Bold"/>
-        <Separator HorizontalAlignment="Left" Height="34" Margin="79,86,0,0" VerticalAlignment="Top" Width="338"/>
-        <Button x:Name="ExtendDateBtn" Content="Extend Date" HorizontalAlignment="Left" Margin="161,121,0,0" VerticalAlignment="Top" Width="72" Click="ExtendDateBtn_Click" FontFamily="Ink Free" FontWeight="Bold"/>
-        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="253,121,0,0" VerticalAlignment="Top" Width="72" FontFamily="Ink Free" FontWeight="Bold" Click="BackBtn_Click"/>
+        <Separator HorizontalAlignment="Left" Height="34" Margin="79,125,0,0" VerticalAlignment="Top" Width="338"/>
+        <Button x:Name="ExtendDateBtn" Content="Extend Date" HorizontalAlignment="Left" Margin="164,161,0,0" VerticalAlignment="Top" Width="72" Click="ExtendDateBtn_Click" FontFamily="Ink Free" FontWeight="Bold"/>
+        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="258,162,0,0" VerticalAlignment="Top" Width="72" FontFamily="Ink Free" FontWeight="Bold" Click="BackBtn_Click"/>
+        <Label Content="Book Id :" HorizontalAlignment="Left" Margin="71,88,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold"/>
+        <TextBox x:Name="BookIdTxtBx" HorizontalAlignment="Left" Height="23" Margin="133,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="287" FontFamily="Ink Free" FontWeight="Bold"/>
 
 
     </Grid>
