@@ -51,22 +51,12 @@ namespace Library
         {
             con = new SqlConnection(cs);
             con.Open();
-            adapt = new SqlDataAdapter("select BookName,CategoryTitle,AuthorName  from Books where BookName like '" + SearchTxtBx.Text + "%'", con);
+            adapt = new SqlDataAdapter("select BookName,CategoryTitle,AuthorName  from Books where BookName like '%" + SearchTxtBx.Text + "%'", con);
             dt = new DataTable();
             adapt.Fill(dt);
             MemberSearchBookDG.ItemsSource = dt.DefaultView;
             con.Close();
         }
-
-        private void SearchTxtBx_KeyUp(object sender, KeyEventArgs e)
-        {
-            con = new SqlConnection(cs);
-            con.Open();
-            adapt = new SqlDataAdapter("select BookName,CategoryTitle,AuthorName from Books where BookName like '" + SearchTxtBx.Text + "%'", con);
-            dt = new DataTable();
-            adapt.Fill(dt);
-            MemberSearchBookDG.ItemsSource = dt.DefaultView;
-            con.Close();
-        }
+     
     }
 }
