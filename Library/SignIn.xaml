@@ -10,7 +10,7 @@
         <TextBox x:Name="InfoTxtBx" HorizontalAlignment="Left" Margin="93,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" FontWeight="Bold" FontFamily="Ink Free" Height="24"/>
         <Label Content="Password " HorizontalAlignment="Left" Margin="89,100,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Width="71"/>
         <Button x:Name="SignInBtn" Content="Sign In" HorizontalAlignment="Left" Margin="153,161,0,0" VerticalAlignment="Top" Width="88" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Height="25" Click="SignInBtn_Click"/>
-        <Label Content="Email or Username or Phone Number" HorizontalAlignment="Left" Margin="88,50,0,0" VerticalAlignment="Top" Width="239" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Height="34"/>
+        <Label Content="Email " HorizontalAlignment="Left" Margin="88,50,0,0" VerticalAlignment="Top" Width="239" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Height="34"/>
         <PasswordBox x:Name="PasswordTxtBx" HorizontalAlignment="Left" Margin="94,123,0,0" VerticalAlignment="Top" Width="222" PasswordChar="*" FontFamily="Ink Free" FontWeight="Bold" Height="24"/>
         <TextBlock x:Name="textblockTxB" HorizontalAlignment="Left" Margin="40,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="176" FontFamily="Ink Free" FontWeight="Bold" FontSize="14"/>
         <Separator HorizontalAlignment="Left" Height="38" Margin="38,18,0,0" VerticalAlignment="Top" Width="338"/>
