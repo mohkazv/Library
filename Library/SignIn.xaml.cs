@@ -89,7 +89,7 @@ namespace Library
                     else
                     {
                         MessageBox.Show(
-                               messageBoxText: "Invalid Login please check username and password.",
+                               messageBoxText: "Invalid Login please check Username and Password.",
                                caption: "Error",
                                button: MessageBoxButton.OK,
                                MessageBoxImage.Error);
