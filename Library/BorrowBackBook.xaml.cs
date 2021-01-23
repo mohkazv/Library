@@ -55,7 +55,7 @@ namespace Library
                     checkdata.Parameters.AddWithValue("@BookId", BookIdTxtBx.Text);
                     checkdata.Parameters.AddWithValue("@UserId", UserIdTxtBx.Text);
                     int BookExist = (int)checkdata.ExecuteScalar();
-
+                    con.Close();
                     if (BookExist > 0)
                     {
                         con.Open();
