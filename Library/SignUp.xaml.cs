@@ -85,7 +85,7 @@ namespace Library
                                 icon: MessageBoxImage.Information);
                         con.Close();
                         new LibrarianLoginPage().Show();
-
+                        Close();
 
 
                     } }
