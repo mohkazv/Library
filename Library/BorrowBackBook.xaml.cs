@@ -49,22 +49,38 @@ namespace Library
                 }
                 else
                 {
-         
+
                     con.Open();
-                    cmd = new SqlCommand("Delete From BorrowedBooks Where BookId=@BookId and UserId=@UserId", con);
+                    SqlCommand checkdata = new SqlCommand("SELECT COUNT(*) From BorrowedBooks WHERE BookId= @BookId and UserId=@UserId", con);
+                    checkdata.Parameters.AddWithValue("@BookId", BookIdTxtBx.Text);
+                    checkdata.Parameters.AddWithValue("@UserId", UserIdTxtBx.Text);
+                    int BookExist = (int)checkdata.ExecuteScalar();
 
-                    cmd.Parameters.AddWithValue("@BookId", BookIdTxtBx.Text);
-                    cmd.Parameters.AddWithValue("@UserId", UserIdTxtBx.Text);
-               
-                    int deleted = cmd.ExecuteNonQuery();
-                    MessageBox.Show(
-                                  messageBoxText: $"The Book successfully Borrowed Back",
-                                  caption: "Successful",
+                    if (BookExist > 0)
+                    {
+                        con.Open();
+                        cmd = new SqlCommand("Delete From BorrowedBooks Where BookId=@BookId and UserId=@UserId", con);
+
+                        cmd.Parameters.AddWithValue("@BookId", BookIdTxtBx.Text);
+                        cmd.Parameters.AddWithValue("@UserId", UserIdTxtBx.Text);
+
+                        int deleted = cmd.ExecuteNonQuery();
+                        MessageBox.Show(
+                                      messageBoxText: $"The Book successfully Borrowed Back",
+                                      caption: "Successful",
+                                      button: MessageBoxButton.OK,
+                                      icon: MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                                  messageBoxText: "the enterd record not Found.",
+                                  caption: "Error",
                                   button: MessageBoxButton.OK,
-                                  icon: MessageBoxImage.Information);
+                                  MessageBoxImage.Error);
+                    }
 
-                    BookIdTxtBx.Text = "";
-                    UserIdTxtBx.Text = "";
+                    
 
                 }
             }
